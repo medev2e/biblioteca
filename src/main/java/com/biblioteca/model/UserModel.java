@@ -52,13 +52,13 @@ public class UserModel extends PersonModel {
         this.email = email;
     }
 
-    public static String writeFile(List<UserModel> users) {
+    private static String writeFile(List<UserModel> users) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(FILE))) {
             for (UserModel u : users) {
-                writer.write(String.format("%s,%s,%s,%d,%s%n", u.getNationalId(), u.getNames(), u.getLastNames(),
+                writer.write(String.format("%s,%s,%s,%s,%d,%s%n", u.getNationalId(), u.getNames(), u.getLastNames(),
                         u.getAddress(), u.getPhoneNumber(), u.getEmail()));
             }
-            return "Usuario creado";
+            return "Cambio escrito";
         } catch (IOException e) {
             return ("Error al escribir el archivo [users.txt]: " + e.getMessage());
         }
@@ -69,7 +69,7 @@ public class UserModel extends PersonModel {
         try (BufferedReader reader = new BufferedReader(new FileReader(FILE))) {
             for (String line; (line = reader.readLine()) != null;) {
                 String[] index = line.split(",");
-                if (index.length == 5) {
+                if (index.length == 6) {
                     users.add(
                             new UserModel(index[0], index[1], index[2], index[3], Long.parseLong(index[4]), index[5]));
                 }
@@ -80,13 +80,13 @@ public class UserModel extends PersonModel {
         return users;
     }
 
-    public static String createUser(UserModel user) {
+    public static String createUserInFile(UserModel user) {
         List<UserModel> users = readFile();
         users.add(user);
         return writeFile(users);
     }
 
-    public static String updateUser(UserModel user) {
+    public static String updateUserInFile(UserModel user) {
         List<UserModel> users = readFile();
         for (UserModel u : users) {
             if (u.getNationalId().equals(user.getNationalId())) {
@@ -101,10 +101,10 @@ public class UserModel extends PersonModel {
         return "Documento de identidad no encontrado.";
     }
 
-    public static String deleteUser(UserModel user) {
+    public static String deleteUserFromFile(String nationalId) {
         List<UserModel> users = readFile();
         for (int e = 0; e < users.size(); e++) {
-            if (users.get(e).getNationalId().equals(user.getNationalId())) {
+            if (users.get(e).getNationalId().equals(nationalId)) {
                 users.remove(e);
                 return writeFile(users);
             }

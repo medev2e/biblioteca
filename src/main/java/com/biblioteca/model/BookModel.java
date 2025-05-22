@@ -109,7 +109,7 @@ public class BookModel {
         try (BufferedReader reader = new BufferedReader(new FileReader(FILE))) {
             for (String line; (line = reader.readLine()) != null;) {
                 String[] index = line.split(",");
-                if (index.length == 5) {
+                if (index.length == 7) {
                     books.add(
                             new BookModel(index[0], index[1], index[2], index[3], index[4], index[5],
                                     Boolean.parseBoolean(index[6])));

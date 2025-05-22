@@ -40,7 +40,7 @@ public class BookView extends javax.swing.JPanel {
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        tblDatos.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
+        tblDatos.setFont(new java.awt.Font("sansserif", 0, 12)); // NOI18N
         tblDatos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 

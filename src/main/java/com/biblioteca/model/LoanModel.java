@@ -78,7 +78,7 @@ public class LoanModel {
         try (BufferedReader reader = new BufferedReader(new FileReader(FILE))) {
             for (String line; (line = reader.readLine()) != null;) {
                 String[] index = line.split(",");
-                if (index.length == 5) {
+                if (index.length == 4) {
                     loans.add(
                             new LoanModel(index[0], index[1], LocalDate.parse(index[2]), LocalDate.parse(index[3])));
                 }
