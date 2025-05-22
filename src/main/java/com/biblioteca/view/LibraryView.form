@@ -47,7 +47,7 @@
                       <Component id="pnlContenido" max="32767" attributes="0"/>
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace max="32767" attributes="0"/>
-                          <Component id="btnBuscar" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnCerrarSesion" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -59,7 +59,7 @@
               <Component id="pnlOpciones" max="32767" attributes="0"/>
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                  <Component id="btnBuscar" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnCerrarSesion" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="100" max="32767" attributes="0"/>
                   <Component id="pnlContenido" min="-2" max="-2" attributes="0"/>
               </Group>
@@ -241,7 +241,7 @@
             </DimensionLayout>
           </Layout>
         </Container>
-        <Component class="javax.swing.JButton" name="btnBuscar">
+        <Component class="javax.swing.JButton" name="btnCerrarSesion">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="sansserif" size="14" style="0"/>
@@ -255,7 +255,7 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBuscarActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCerrarSesionActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>

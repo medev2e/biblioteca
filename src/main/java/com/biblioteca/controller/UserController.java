@@ -35,7 +35,7 @@ public class UserController {
         userModel.setPhoneNumber(insertUserView.getTxtTelefono());
         userModel.setEmail(insertUserView.getTxtCorreo());
 
-        userView.mostrarMensaje(UserModel.createUserInFile(userModel));
+        userView.mostrarMensaje(UserModel.createUserInFile(userModel)); // "Cambio escrito";
     }
 
     public void updateUser() {

@@ -52,15 +52,15 @@ public class UserModel extends PersonModel {
         this.email = email;
     }
 
-    private static String writeFile(List<UserModel> users) {
+    private static boolean writeFile(List<UserModel> users) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(FILE))) {
             for (UserModel u : users) {
                 writer.write(String.format("%s,%s,%s,%s,%d,%s%n", u.getNationalId(), u.getNames(), u.getLastNames(),
                         u.getAddress(), u.getPhoneNumber(), u.getEmail()));
             }
-            return "Cambio escrito";
+            return true;
         } catch (IOException e) {
-            return ("Error al escribir el archivo [users.txt]: " + e.getMessage());
+            return false;
         }
     }
 
@@ -83,7 +83,12 @@ public class UserModel extends PersonModel {
     public static String createUserInFile(UserModel user) {
         List<UserModel> users = readFile();
         users.add(user);
-        return writeFile(users);
+
+        if (writeFile(users)) {
+            return "Usuario creado";
+        } else {
+            return "No se pudo crear el usuario";
+        }
     }
 
     public static String updateUserInFile(UserModel user) {
@@ -95,7 +100,13 @@ public class UserModel extends PersonModel {
                 u.setAddress(user.getAddress());
                 u.setPhoneNumber(user.getPhoneNumber());
                 u.setEmail(user.getEmail());
-                return writeFile(users);
+
+                if (writeFile(users)) {
+                    return "Usuario actualizado";
+                } // "Cambio realizado"
+                else {
+                    return "No se pudo actualizar el usuario";
+                }
             }
         }
         return "Documento de identidad no encontrado.";
@@ -103,10 +114,16 @@ public class UserModel extends PersonModel {
 
     public static String deleteUserFromFile(String nationalId) {
         List<UserModel> users = readFile();
-        for (int e = 0; e < users.size(); e++) {
-            if (users.get(e).getNationalId().equals(nationalId)) {
-                users.remove(e);
-                return writeFile(users);
+        for (int u = 0; u < users.size(); u++) {
+            if (users.get(u).getNationalId().equals(nationalId)) {
+                users.remove(u);
+
+                if (writeFile(users)) {
+                    return "Usuario eliminado";
+                } // "Cambio realizado"
+                else {
+                    return "No se pudo eliminar el usuario";
+                }
             }
         }
         return "Documento de identidad no encontrado";
