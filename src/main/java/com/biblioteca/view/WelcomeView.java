@@ -8,12 +8,12 @@ package com.biblioteca.view;
  *
  * @author me
  */
-public class InicioView extends javax.swing.JPanel {
+public class WelcomeView extends javax.swing.JPanel {
 
     /**
      * Creates new form InicioView
      */
-    public InicioView() {
+    public WelcomeView() {
         initComponents();
     }
 

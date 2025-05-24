@@ -6,48 +6,94 @@ import javax.swing.table.DefaultTableModel;
 
 import com.biblioteca.model.UserModel;
 import com.biblioteca.view.UserView;
-import com.biblioteca.view.InsertUserView;
 import com.biblioteca.view.LibraryView;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class UserController {
 
     private UserView userView;
-    private InsertUserView insertUserView;
     private UserModel userModel;
 
     public UserController() {
     }
 
-    public UserController(UserView userView, InsertUserView insertUserView, UserModel userModel) {
+    public UserController(UserView userView, UserModel userModel) {
         this.userView = userView;
-        this.insertUserView = insertUserView;
         this.userModel = userModel;
-
-        initInsertUserListeners();
     }
 
     public void createUser() {
 
-        userModel.setNationalId(insertUserView.getTxtIdentificacion());
-        userModel.setNames(insertUserView.getTxtNombres());
-        userModel.setLastNames(insertUserView.getTxtApellidos());
-        userModel.setAddress(insertUserView.getTxtDireccion());
-        userModel.setPhoneNumber(insertUserView.getTxtTelefono());
-        userModel.setEmail(insertUserView.getTxtCorreo());
+        userView.getBtnInsertar().setText("Crear");
+        userView.setLblDatosUsuario("Nuevo usuario");
+        userView.setEditableTxtIdentificacion(true);
+        LibraryView.mostrarJPanel(userView.getPnlDatosUsuario());
 
-        userView.mostrarMensaje(UserModel.createUserInFile(userModel)); // "Cambio escrito";
+        userView.getBtnInsertar().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent evt) {
+
+                userModel.setNationalId(userView.getTxtIdentificacion());
+                userModel.setNames(userView.getTxtNombres());
+                userModel.setLastNames(userView.getTxtApellidos());
+                userModel.setAddress(userView.getTxtDireccion());
+                userModel.setPhoneNumber(userView.getTxtTelefono());
+                userModel.setEmail(userView.getTxtCorreo());
+
+                userView.mostrarMensaje(UserModel.createUserInFile(userModel));
+
+                LibraryView.mostrarJPanel(new UserView().getPnlVerUsuario());
+                loadTable();
+
+                userView.getBtnInsertar().removeActionListener(this);
+            }
+        });
     }
 
     public void updateUser() {
 
-        userModel.setNationalId(insertUserView.getTxtIdentificacion());
-        userModel.setNames(insertUserView.getTxtNombres());
-        userModel.setLastNames(insertUserView.getTxtApellidos());
-        userModel.setAddress(insertUserView.getTxtDireccion());
-        userModel.setPhoneNumber(insertUserView.getTxtTelefono());
-        userModel.setEmail(insertUserView.getTxtCorreo());
+        DefaultTableModel dtm = (DefaultTableModel) userView.getTblDatos().getModel();
+        int row = userView.getTblDatos().getSelectedRow();
 
-        userView.mostrarMensaje(UserModel.updateUserInFile(userModel));
+        if (row != -1) {
+
+            userView.getBtnInsertar().setText("Editar");
+            userView.setLblDatosUsuario("Editar usuario");
+            userView.setEditableTxtIdentificacion(false);
+
+            userView.setTxtIdentificacion(dtm.getValueAt(row, 0).toString());
+            userView.setEditableTxtIdentificacion(false);
+            userView.setTxtNombres(dtm.getValueAt(row, 1).toString());
+            userView.setTxtApellidos(dtm.getValueAt(row, 2).toString());
+            userView.setTxtDireccion(dtm.getValueAt(row, 3).toString());
+            userView.setTxtTelefono(Long.parseLong(dtm.getValueAt(row, 4).toString()));
+            userView.setTxtCorreo(dtm.getValueAt(row, 5).toString());
+
+            LibraryView.mostrarJPanel(userView.getPnlDatosUsuario());
+
+            userView.getBtnInsertar().addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent evt) {
+
+                    userModel.setNationalId(userView.getTxtIdentificacion());
+                    userModel.setNames(userView.getTxtNombres());
+                    userModel.setLastNames(userView.getTxtApellidos());
+                    userModel.setAddress(userView.getTxtDireccion());
+                    userModel.setPhoneNumber(userView.getTxtTelefono());
+                    userModel.setEmail(userView.getTxtCorreo());
+
+                    userView.mostrarMensaje(UserModel.updateUserInFile(userModel));
+
+                    LibraryView.mostrarJPanel(new UserView().getPnlVerUsuario());
+                    loadTable();
+
+                    userView.getBtnInsertar().removeActionListener(this);
+                }
+            });
+        } else {
+            userView.mostrarMensaje("Seleccione una fila para editar.");
+        }
     }
 
     public void deleteUser() {
@@ -78,25 +124,5 @@ public class UserController {
                     u.getEmail()
             });
         }
-    }
-
-    public void initInsertUserListeners() {
-        insertUserView.getBtnInsertar().addActionListener(e -> {
-            if ("Editar usuario".equals(insertUserView.getLblTituloDePagina())) {
-                updateUser();
-            } else {
-                createUser();
-            }
-            insertUserView.setEditableTxtIdentificacion(true);
-            insertUserView.clearJTextFields();
-            LibraryView.mostrarJPanel(userView);
-            loadTable();
-        });
-
-        insertUserView.getBtnDescartar().addActionListener(e -> {
-            insertUserView.setEditableTxtIdentificacion(true);
-            insertUserView.clearJTextFields();
-            LibraryView.mostrarJPanel(userView);
-        });
     }
 }

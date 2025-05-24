@@ -18,7 +18,7 @@ public class LibraryView extends javax.swing.JFrame {
      */
     public LibraryView() {
         initComponents();
-        mostrarJPanel(new InicioView());
+        mostrarJPanel(new WelcomeView());
     }
 
     /**
@@ -204,7 +204,7 @@ public class LibraryView extends javax.swing.JFrame {
 
     private void btnUsuariosActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnUsuariosActionPerformed
         // TODO add your handling code here:
-        mostrarJPanel(new UserView());
+        mostrarJPanel(new UserView().getPnlVerUsuario());
     }// GEN-LAST:event_btnUsuariosActionPerformed
 
     private void btnLibrosActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnLibrosActionPerformed
@@ -224,7 +224,7 @@ public class LibraryView extends javax.swing.JFrame {
 
     private void btnInicioActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnInicioActionPerformed
         // TODO add your handling code here:
-        mostrarJPanel(new InicioView());
+        mostrarJPanel(new WelcomeView());
     }// GEN-LAST:event_btnInicioActionPerformed
 
     private void btnCerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnBuscarActionPerformed
