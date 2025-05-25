@@ -60,6 +60,7 @@ public class UserModel extends PersonModel {
             }
             return true;
         } catch (IOException e) {
+            System.err.println("Error al escribir el archivo [users.txt]: " + e.getMessage());
             return false;
         }
     }
@@ -75,7 +76,7 @@ public class UserModel extends PersonModel {
                 }
             }
         } catch (IOException e) {
-            System.err.println("Error al leer los usuarios: " + e.getMessage());
+            System.err.println("Error al leer el archivo [users.txt]: " + e.getMessage());
         }
         return users;
     }
@@ -85,9 +86,9 @@ public class UserModel extends PersonModel {
         users.add(user);
 
         if (writeFile(users)) {
-            return "Usuario creado";
+            return "Usuario registrado";
         } else {
-            return "No se pudo crear el usuario";
+            return "No se pudo registrar el usuario";
         }
     }
 
@@ -103,8 +104,7 @@ public class UserModel extends PersonModel {
 
                 if (writeFile(users)) {
                     return "Usuario actualizado";
-                } // "Cambio realizado"
-                else {
+                } else {
                     return "No se pudo actualizar el usuario";
                 }
             }
@@ -120,8 +120,7 @@ public class UserModel extends PersonModel {
 
                 if (writeFile(users)) {
                     return "Usuario eliminado";
-                } // "Cambio realizado"
-                else {
+                } else {
                     return "No se pudo eliminar el usuario";
                 }
             }

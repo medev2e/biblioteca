@@ -25,8 +25,8 @@ public class UserController {
 
     public void createUser() {
 
-        userView.getBtnInsertar().setText("Crear");
-        userView.setLblDatosUsuario("Nuevo usuario");
+        userView.getBtnInsertar().setText("Registrar");
+        userView.setLblTituloDatosUsuario("Nuevo usuario");
         userView.setEditableTxtIdentificacion(true);
         LibraryView.mostrarJPanel(userView.getPnlDatosUsuario());
 
@@ -44,7 +44,6 @@ public class UserController {
                 userView.mostrarMensaje(UserModel.createUserInFile(userModel));
 
                 LibraryView.mostrarJPanel(new UserView().getPnlVerUsuario());
-                loadTable();
 
                 userView.getBtnInsertar().removeActionListener(this);
             }
@@ -59,11 +58,10 @@ public class UserController {
         if (row != -1) {
 
             userView.getBtnInsertar().setText("Editar");
-            userView.setLblDatosUsuario("Editar usuario");
+            userView.setLblTituloDatosUsuario("Editar usuario");
             userView.setEditableTxtIdentificacion(false);
 
             userView.setTxtIdentificacion(dtm.getValueAt(row, 0).toString());
-            userView.setEditableTxtIdentificacion(false);
             userView.setTxtNombres(dtm.getValueAt(row, 1).toString());
             userView.setTxtApellidos(dtm.getValueAt(row, 2).toString());
             userView.setTxtDireccion(dtm.getValueAt(row, 3).toString());
@@ -86,7 +84,6 @@ public class UserController {
                     userView.mostrarMensaje(UserModel.updateUserInFile(userModel));
 
                     LibraryView.mostrarJPanel(new UserView().getPnlVerUsuario());
-                    loadTable();
 
                     userView.getBtnInsertar().removeActionListener(this);
                 }

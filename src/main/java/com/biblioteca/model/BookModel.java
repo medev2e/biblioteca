@@ -92,15 +92,16 @@ public class BookModel {
         this.available = available;
     }
 
-    public static String writeFile(List<BookModel> books) {
+    public static boolean writeFile(List<BookModel> books) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(FILE))) {
             for (BookModel b : books) {
-                writer.write(String.format("%s,%s,%s,%s,%s,%b%n", b.getIsbnNumber(), b.getTitle(), b.getAuthor(),
+                writer.write(String.format("%s,%s,%s,%s,%s,%s,%b%n", b.getIsbnNumber(), b.getTitle(), b.getAuthor(),
                         b.getPublisher(), b.getGenre(), b.getEdition(), b.getAvailable()));
             }
-            return "Libro creado";
+            return true;
         } catch (IOException e) {
-            return ("Error al escribir el archivo [books.txt]: " + e.getMessage());
+            System.err.println("Error al escribir el archivo [books.txt]: " + e.getMessage());
+            return false;
         }
     }
 
@@ -116,18 +117,23 @@ public class BookModel {
                 }
             }
         } catch (IOException e) {
-            System.err.println("Error al leer los libros: " + e.getMessage());
+            System.err.println("Error al leer el archivo [books.txt]: " + e.getMessage());
         }
         return books;
     }
 
-    public static String createBook(BookModel book) {
+    public static String createBookInFile(BookModel book) {
         List<BookModel> books = readFile();
         books.add(book);
-        return writeFile(books);
+
+        if (writeFile(books)) {
+            return "Libro registrado";
+        } else {
+            return "No se pudo registrar el libro";
+        }
     }
 
-    public static String updateBook(BookModel book) {
+    public static String updateBookInFile(BookModel book) {
         List<BookModel> books = readFile();
         for (BookModel b : books) {
             if (b.getIsbnNumber().equals(book.getIsbnNumber())) {
@@ -137,18 +143,28 @@ public class BookModel {
                 b.setGenre(book.getGenre());
                 b.setEdition(book.getEdition());
                 b.setAvailable(book.getAvailable());
-                return writeFile(books);
+
+                if (writeFile(books)) {
+                    return "Libro actualizado";
+                } else {
+                    return "No se pudo actualizar el libro";
+                }
             }
         }
         return "Número ISBN no encontrado.";
     }
 
-    public static String deleteBook(BookModel book) {
+    public static String deleteBookFromFile(String isbn) {
         List<BookModel> books = readFile();
         for (int e = 0; e < books.size(); e++) {
-            if (books.get(e).getIsbnNumber().equals(book.getIsbnNumber())) {
+            if (books.get(e).getIsbnNumber().equals(isbn)) {
                 books.remove(e);
-                return writeFile(books);
+
+                if (writeFile(books)) {
+                    return "Libro eliminado";
+                } else {
+                    return "No se pudo eliminar el libro";
+                }
             }
         }
         return "Número ISBN no encontrado.";
