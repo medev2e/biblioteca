@@ -5,7 +5,10 @@ import java.util.List;
 import javax.swing.table.DefaultTableModel;
 
 import com.biblioteca.model.BookModel;
+import com.biblioteca.model.LoanModel;
 import com.biblioteca.view.BookView;
+import com.biblioteca.view.LoanView;
+
 import static com.biblioteca.view.LibraryView.mostrarJPanel;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -23,7 +26,7 @@ public class BookController {
         this.bookModel = bookModel;
     }
 
-    public void createUser() {
+    public void createBook() {
 
         bookView.getBtnInsertar().setText("Registrar");
         bookView.setLblTituloDatosLibro("Nuevo libro");
@@ -33,7 +36,19 @@ public class BookController {
             @Override
             public void actionPerformed(ActionEvent evt) {
 
-                bookModel.setIsbnNumber(bookView.getTxtIsbn());
+                int bookRef = 0;
+
+                List<BookModel> books = BookModel.readFile();
+
+                for (BookModel b : books) {
+                    if (b.getIsbnNumber().equals(bookView.getTxtIsbn() + "-" + Integer.toString(bookRef))) {
+                        bookRef++;
+                    }
+                }
+
+                String isbnNumber = bookView.getTxtIsbn() + "-" + bookRef;
+
+                bookModel.setIsbnNumber(isbnNumber);
                 bookModel.setTitle(bookView.getTxtTitulo());
                 bookModel.setAuthor(bookView.getTxtAutor());
                 bookModel.setPublisher(bookView.getTxtEditorial());
@@ -50,7 +65,7 @@ public class BookController {
         });
     }
 
-    public void updateUser() {
+    public void updateBook() {
 
         DefaultTableModel dtm = (DefaultTableModel) bookView.getTblDatos().getModel();
         int row = bookView.getTblDatos().getSelectedRow();
@@ -94,7 +109,7 @@ public class BookController {
         }
     }
 
-    public void deleteUser() {
+    public void deleteBook() {
 
         DefaultTableModel dtm = (DefaultTableModel) bookView.getTblDatos().getModel();
         int row = bookView.getTblDatos().getSelectedRow();
@@ -104,6 +119,29 @@ public class BookController {
             loadTable();
         } else {
             bookView.mostrarMensaje("Seleccione una fila para eliminar");
+        }
+    }
+
+    public void loanBook() {
+        DefaultTableModel dtm = (DefaultTableModel) bookView.getTblDatos().getModel();
+        int row = bookView.getTblDatos().getSelectedRow();
+
+        if (row != -1) {
+
+            if (Boolean.parseBoolean(dtm.getValueAt(row, 6).toString())) {
+
+                LoanView loanView = new LoanView();
+
+                loanView.setEditableTxtIsbn(false);
+                loanView.setTxtIsbn(dtm.getValueAt(row, 0).toString());
+
+                new LoanController(loanView, new LoanModel()).createLoan();
+            } else {
+                bookView.mostrarMensaje("Libro no disponible, ya ha sido prestado.");
+            }
+
+        } else {
+            bookView.mostrarMensaje("Seleccione un libro para prestar");
         }
     }
 

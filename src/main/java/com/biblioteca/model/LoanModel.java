@@ -60,7 +60,7 @@ public class LoanModel {
         this.returnDate = returnDate;
     }
 
-    public static boolean writeFile(List<LoanModel> loans) {
+    private static boolean writeFile(List<LoanModel> loans) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(FILE))) {
             for (LoanModel l : loans) {
                 writer.write(String.format("%s,%s,%s,%s%n", l.getNationalId(), l.getIsbnNumber(),

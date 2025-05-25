@@ -41,7 +41,6 @@ public class LoanView extends javax.swing.JPanel {
         pnlVerPrestamo = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblDatos = new javax.swing.JTable();
-        btnNuevo = new javax.swing.JButton();
         btnEditar = new javax.swing.JButton();
         btnEntrega = new javax.swing.JButton();
         txtBuscar = new javax.swing.JTextField();
@@ -102,18 +101,6 @@ public class LoanView extends javax.swing.JPanel {
 
         pnlVerPrestamo.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 57, 818, 338));
 
-        btnNuevo.setBackground(new java.awt.Color(204, 204, 255));
-        btnNuevo.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
-        btnNuevo.setText("Nuevo");
-        btnNuevo.setBorder(null);
-        btnNuevo.setPreferredSize(new java.awt.Dimension(90, 30));
-        btnNuevo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnNuevoActionPerformed(evt);
-            }
-        });
-        pnlVerPrestamo.add(btnNuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(534, 410, -1, -1));
-
         btnEditar.setBackground(new java.awt.Color(204, 204, 255));
         btnEditar.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         btnEditar.setText("Editar");
@@ -169,6 +156,7 @@ public class LoanView extends javax.swing.JPanel {
         txtIdentificacion.setPreferredSize(new java.awt.Dimension(285, 30));
         pnlDatosPrestamo.add(txtIdentificacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 110, -1, -1));
 
+        txtPrestamo.setEditable(false);
         txtPrestamo.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         txtPrestamo.setPreferredSize(new java.awt.Dimension(285, 30));
         pnlDatosPrestamo.add(txtPrestamo, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 180, -1, -1));
@@ -226,11 +214,6 @@ public class LoanView extends javax.swing.JPanel {
         // TODO add your handling code here:
         mostrarJPanel(new LoanView().getPnlVerPrestamo());
     }//GEN-LAST:event_btnDescartarActionPerformed
-
-    private void btnNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoActionPerformed
-        // TODO add your handling code here:
-        loanController.createLoan();
-    }//GEN-LAST:event_btnNuevoActionPerformed
 
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
         // TODO add your handling code here:
@@ -294,10 +277,6 @@ public class LoanView extends javax.swing.JPanel {
         txtPrestamo.setText(prestamo.toString());
     }
     
-    public void setEditableTxtPrestamo(boolean opcion) {
-        txtPrestamo.setEditable(opcion);
-    }
-    
     public void setEditableTxtIdentificacion(boolean opcion) {
         txtIdentificacion.setEditable(opcion);
     }
@@ -316,7 +295,6 @@ public class LoanView extends javax.swing.JPanel {
     private javax.swing.JButton btnEditar;
     private javax.swing.JButton btnEntrega;
     private javax.swing.JButton btnInsertar;
-    private javax.swing.JButton btnNuevo;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblEntregar;
     private javax.swing.JLabel lblIdentificacion;

@@ -92,10 +92,11 @@ public class BookModel {
         this.available = available;
     }
 
-    public static boolean writeFile(List<BookModel> books) {
+    private static boolean writeFile(List<BookModel> books) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(FILE))) {
             for (BookModel b : books) {
-                writer.write(String.format("%s,%s,%s,%s,%s,%s,%b%n", b.getIsbnNumber(), b.getTitle(), b.getAuthor(),
+                writer.write(String.format("%s,%s,%s,%s,%s,%s,%b%n", b.getIsbnNumber(), b.getTitle(),
+                        b.getAuthor(),
                         b.getPublisher(), b.getGenre(), b.getEdition(), b.getAvailable()));
             }
             return true;
@@ -124,6 +125,7 @@ public class BookModel {
 
     public static String createBookInFile(BookModel book) {
         List<BookModel> books = readFile();
+
         books.add(book);
 
         if (writeFile(books)) {

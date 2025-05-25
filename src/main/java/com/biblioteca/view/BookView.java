@@ -266,21 +266,22 @@ public class BookView extends javax.swing.JPanel {
 
     private void btnNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoActionPerformed
         // TODO add your handling code here:
-        bookController.createUser();
+        bookController.createBook();
     }//GEN-LAST:event_btnNuevoActionPerformed
 
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
         // TODO add your handling code here:
-        bookController.updateUser();
+        bookController.updateBook();
     }//GEN-LAST:event_btnEditarActionPerformed
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
         // TODO add your handling code here:
-        bookController.deleteUser();
+        bookController.deleteBook();
     }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void btnPrestarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrestarActionPerformed
         // TODO add your handling code here:
+        bookController.loanBook();
     }//GEN-LAST:event_btnPrestarActionPerformed
 
     public JButton getBtnInsertar() {

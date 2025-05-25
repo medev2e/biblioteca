@@ -3,9 +3,9 @@ package com.biblioteca.controller;
 import java.util.List;
 
 import javax.swing.table.DefaultTableModel;
-
 import com.biblioteca.model.LoanModel;
 import static com.biblioteca.view.LibraryView.mostrarJPanel;
+
 import com.biblioteca.view.LoanView;
 import java.awt.event.ActionListener;
 import java.time.LocalDate;
@@ -29,7 +29,6 @@ public class LoanController {
         loanView.getBtnInsertar().setText("Registrar");
         loanView.setLblTituloDatosPrestamo("Nuevo préstamo");
         loanView.setTxtPrestamo(LocalDate.now());
-        loanView.setEditableTxtPrestamo(false);
 
         mostrarJPanel(loanView.getPnlDatosPrestamo());
 
@@ -62,7 +61,6 @@ public class LoanController {
             loanView.setLblTituloDatosPrestamo("Editar préstamo");
             loanView.setEditableTxtIdentificacion(false);
             loanView.setEditableTxtIsbn(false);
-            loanView.setEditableTxtPrestamo(false);
 
             loanView.setTxtIdentificacion(dtm.getValueAt(row, 0).toString());
             loanView.setTxtIsbn(dtm.getValueAt(row, 1).toString());
@@ -98,6 +96,7 @@ public class LoanController {
         int row = loanView.getTblDatos().getSelectedRow();
 
         if (row != -1) {
+
             loanView.mostrarMensaje(
                     LoanModel.deleteLoanFromFile(dtm.getValueAt(row, 0).toString(), dtm.getValueAt(row, 1).toString()));
             loadTable();
