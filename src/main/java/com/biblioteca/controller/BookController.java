@@ -6,7 +6,7 @@ import javax.swing.table.DefaultTableModel;
 
 import com.biblioteca.model.BookModel;
 import com.biblioteca.view.BookView;
-import com.biblioteca.view.LibraryView;
+import static com.biblioteca.view.LibraryView.mostrarJPanel;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
@@ -27,8 +27,7 @@ public class BookController {
 
         bookView.getBtnInsertar().setText("Registrar");
         bookView.setLblTituloDatosLibro("Nuevo libro");
-        bookView.setEditableTxtIsbn(true);
-        LibraryView.mostrarJPanel(bookView.getPnlDatosLibro());
+        mostrarJPanel(bookView.getPnlDatosLibro());
 
         bookView.getBtnInsertar().addActionListener(new ActionListener() {
             @Override
@@ -44,7 +43,7 @@ public class BookController {
 
                 bookView.mostrarMensaje(BookModel.createBookInFile(bookModel));
 
-                LibraryView.mostrarJPanel(new BookView().getPnlVerLibro());
+                mostrarJPanel(new BookView().getPnlVerLibro());
 
                 bookView.getBtnInsertar().removeActionListener(this);
             }
@@ -69,7 +68,7 @@ public class BookController {
             bookView.setTxtGenero(dtm.getValueAt(row, 4).toString());
             bookView.setTxtEdicion(dtm.getValueAt(row, 5).toString());
 
-            LibraryView.mostrarJPanel(bookView.getPnlDatosLibro());
+            mostrarJPanel(bookView.getPnlDatosLibro());
 
             bookView.getBtnInsertar().addActionListener(new ActionListener() {
                 @Override
@@ -85,7 +84,7 @@ public class BookController {
 
                     bookView.mostrarMensaje(BookModel.updateBookInFile(bookModel));
 
-                    LibraryView.mostrarJPanel(new BookView().getPnlVerLibro());
+                    mostrarJPanel(new BookView().getPnlVerLibro());
 
                     bookView.getBtnInsertar().removeActionListener(this);
                 }

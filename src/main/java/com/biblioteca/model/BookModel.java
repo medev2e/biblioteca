@@ -154,10 +154,10 @@ public class BookModel {
         return "Número ISBN no encontrado.";
     }
 
-    public static String deleteBookFromFile(String isbn) {
+    public static String deleteBookFromFile(String isbnNumber) {
         List<BookModel> books = readFile();
         for (int e = 0; e < books.size(); e++) {
-            if (books.get(e).getIsbnNumber().equals(isbn)) {
+            if (books.get(e).getIsbnNumber().equals(isbnNumber)) {
                 books.remove(e);
 
                 if (writeFile(books)) {

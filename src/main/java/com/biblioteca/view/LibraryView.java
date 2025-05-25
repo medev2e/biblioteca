@@ -209,7 +209,7 @@ public class LibraryView extends javax.swing.JFrame {
 
     private void btnLibrosActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnLibrosActionPerformed
         // TODO add your handling code here:
-        mostrarJPanel(new BookView());
+        mostrarJPanel(new BookView().getPnlVerLibro());
     }// GEN-LAST:event_btnLibrosActionPerformed
 
     private void btnPrestamosActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnPrestamosActionPerformed

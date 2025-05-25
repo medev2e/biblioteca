@@ -6,7 +6,7 @@ import javax.swing.table.DefaultTableModel;
 
 import com.biblioteca.model.UserModel;
 import com.biblioteca.view.UserView;
-import com.biblioteca.view.LibraryView;
+import static com.biblioteca.view.LibraryView.mostrarJPanel;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
@@ -27,8 +27,7 @@ public class UserController {
 
         userView.getBtnInsertar().setText("Registrar");
         userView.setLblTituloDatosUsuario("Nuevo usuario");
-        userView.setEditableTxtIdentificacion(true);
-        LibraryView.mostrarJPanel(userView.getPnlDatosUsuario());
+        mostrarJPanel(userView.getPnlDatosUsuario());
 
         userView.getBtnInsertar().addActionListener(new ActionListener() {
             @Override
@@ -43,7 +42,7 @@ public class UserController {
 
                 userView.mostrarMensaje(UserModel.createUserInFile(userModel));
 
-                LibraryView.mostrarJPanel(new UserView().getPnlVerUsuario());
+                mostrarJPanel(new UserView().getPnlVerUsuario());
 
                 userView.getBtnInsertar().removeActionListener(this);
             }
@@ -68,7 +67,7 @@ public class UserController {
             userView.setTxtTelefono(Long.parseLong(dtm.getValueAt(row, 4).toString()));
             userView.setTxtCorreo(dtm.getValueAt(row, 5).toString());
 
-            LibraryView.mostrarJPanel(userView.getPnlDatosUsuario());
+            mostrarJPanel(userView.getPnlDatosUsuario());
 
             userView.getBtnInsertar().addActionListener(new ActionListener() {
                 @Override
@@ -83,7 +82,7 @@ public class UserController {
 
                     userView.mostrarMensaje(UserModel.updateUserInFile(userModel));
 
-                    LibraryView.mostrarJPanel(new UserView().getPnlVerUsuario());
+                    mostrarJPanel(new UserView().getPnlVerUsuario());
 
                     userView.getBtnInsertar().removeActionListener(this);
                 }

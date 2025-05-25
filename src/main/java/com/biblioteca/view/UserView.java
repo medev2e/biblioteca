@@ -100,6 +100,14 @@ public class UserView extends javax.swing.JPanel {
         tblDatos.setShowGrid(true);
         tblDatos.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(tblDatos);
+        if (tblDatos.getColumnModel().getColumnCount() > 0) {
+            tblDatos.getColumnModel().getColumn(0).setResizable(false);
+            tblDatos.getColumnModel().getColumn(1).setResizable(false);
+            tblDatos.getColumnModel().getColumn(2).setResizable(false);
+            tblDatos.getColumnModel().getColumn(3).setResizable(false);
+            tblDatos.getColumnModel().getColumn(4).setResizable(false);
+            tblDatos.getColumnModel().getColumn(5).setResizable(false);
+        }
 
         pnlVerUsuario.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 57, 818, 338));
 

@@ -60,16 +60,17 @@ public class LoanModel {
         this.returnDate = returnDate;
     }
 
-    public static String writeFile(List<LoanModel> loans) {
+    public static boolean writeFile(List<LoanModel> loans) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(FILE))) {
             for (LoanModel l : loans) {
                 writer.write(String.format("%s,%s,%s,%s%n", l.getNationalId(), l.getIsbnNumber(),
                         l.getLoanDate().toString(),
                         l.getReturnDate().toString()));
             }
-            return "Prestamo creado";
+            return true;
         } catch (IOException e) {
-            return ("Error al escribir el archivo [loans.txt]: " + e.getMessage());
+            System.err.println("Error al escribir el archivo [loans.txt]: " + e.getMessage());
+            return false;
         }
     }
 
@@ -84,38 +85,53 @@ public class LoanModel {
                 }
             }
         } catch (IOException e) {
-            System.err.println("Error al leer los préstamos: " + e.getMessage());
+            System.err.println("Error al leer el archivo [loans.txt]: " + e.getMessage());
+
         }
         return loans;
     }
 
-    public static String createLoan(LoanModel loan) {
+    public static String createLoanInFile(LoanModel loan) {
         List<LoanModel> loans = readFile();
         loans.add(loan);
-        return writeFile(loans);
+
+        if (writeFile(loans)) {
+            return "Préstamo registrado";
+        } else {
+            return "No se pudo registrar el préstamo";
+        }
     }
 
-    public static String updateLoan(LoanModel loan) {
+    public static String updateLoanInFile(LoanModel loan) {
         List<LoanModel> loans = readFile();
         for (LoanModel l : loans) {
-            if (l.getNationalId().equals(loan.getNationalId())) {
-                l.setIsbnNumber(loan.getIsbnNumber());
+            if (l.getNationalId().equals(loan.getNationalId()) && l.getIsbnNumber().equals(loan.getIsbnNumber())) {
                 l.setLoanDate(loan.getLoanDate());
                 l.setReturnDate(loan.getReturnDate());
-                return writeFile(loans);
+
+                if (writeFile(loans)) {
+                    return "Préstamo actualizado";
+                } else {
+                    return "No se pudo actualizar el préstamo";
+                }
             }
         }
-        return "Documento de identidad no encontrado.";
+        return "Préstamo no encontrado.";
     }
 
-    public static String deleteLoan(LoanModel loan) {
+    public static String deleteLoanFromFile(String nationalId, String isbnNumber) {
         List<LoanModel> loans = readFile();
         for (int e = 0; e < loans.size(); e++) {
-            if (loans.get(e).getNationalId().equals(loan.getNationalId())) {
+            if (loans.get(e).getNationalId().equals(nationalId) && loans.get(e).getIsbnNumber().equals(isbnNumber)) {
                 loans.remove(e);
-                return writeFile(loans);
+
+                if (writeFile(loans)) {
+                    return "Libro entregado";
+                } else {
+                    return "No se pudo recibir la entrega";
+                }
             }
         }
-        return "Documento de identidad no encontrado.";
+        return "Préstamo no encontrado.";
     }
 }
