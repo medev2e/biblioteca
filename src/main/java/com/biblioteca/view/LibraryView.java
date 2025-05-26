@@ -31,7 +31,6 @@ public class LibraryView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        pnlVentana = new javax.swing.JPanel();
         pnlOpciones = new javax.swing.JPanel();
         btnInicio = new javax.swing.JButton();
         btnUsuarios = new javax.swing.JButton();
@@ -39,16 +38,16 @@ public class LibraryView extends javax.swing.JFrame {
         btnPrestamos = new javax.swing.JButton();
         btnPenalizaciones = new javax.swing.JButton();
         pnlContenido = new javax.swing.JPanel();
+        pnlBarra = new javax.swing.JPanel();
         btnCerrarSesion = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        pnlVentana.setBackground(new java.awt.Color(255, 153, 153));
-
         pnlOpciones.setBackground(new java.awt.Color(204, 204, 255));
         pnlOpciones.setPreferredSize(new java.awt.Dimension(220, 590));
+        pnlOpciones.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnInicio.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
         btnInicio.setText("Inicio");
@@ -64,6 +63,7 @@ public class LibraryView extends javax.swing.JFrame {
                 btnInicioActionPerformed(evt);
             }
         });
+        pnlOpciones.add(btnInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 220, -1));
 
         btnUsuarios.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
         btnUsuarios.setText("Usuarios");
@@ -79,6 +79,7 @@ public class LibraryView extends javax.swing.JFrame {
                 btnUsuariosActionPerformed(evt);
             }
         });
+        pnlOpciones.add(btnUsuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 220, -1));
 
         btnLibros.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
         btnLibros.setText("Libros");
@@ -94,6 +95,7 @@ public class LibraryView extends javax.swing.JFrame {
                 btnLibrosActionPerformed(evt);
             }
         });
+        pnlOpciones.add(btnLibros, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, 220, -1));
 
         btnPrestamos.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
         btnPrestamos.setText("Préstamos");
@@ -109,6 +111,7 @@ public class LibraryView extends javax.swing.JFrame {
                 btnPrestamosActionPerformed(evt);
             }
         });
+        pnlOpciones.add(btnPrestamos, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 290, 220, -1));
 
         btnPenalizaciones.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
         btnPenalizaciones.setText("Penalizaciones");
@@ -124,45 +127,15 @@ public class LibraryView extends javax.swing.JFrame {
                 btnPenalizacionesActionPerformed(evt);
             }
         });
+        pnlOpciones.add(btnPenalizaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 340, 220, -1));
 
-        javax.swing.GroupLayout pnlOpcionesLayout = new javax.swing.GroupLayout(pnlOpciones);
-        pnlOpciones.setLayout(pnlOpcionesLayout);
-        pnlOpcionesLayout.setHorizontalGroup(
-            pnlOpcionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(btnInicio, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE)
-            .addComponent(btnUsuarios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btnLibros, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btnPrestamos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btnPenalizaciones, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        pnlOpcionesLayout.setVerticalGroup(
-            pnlOpcionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlOpcionesLayout.createSequentialGroup()
-                .addGap(140, 140, 140)
-                .addComponent(btnInicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(btnUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(btnLibros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(btnPrestamos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(btnPenalizaciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        getContentPane().add(pnlOpciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pnlContenido.setBackground(new java.awt.Color(255, 255, 255));
+        pnlContenido.setLayout(new java.awt.BorderLayout());
+        getContentPane().add(pnlContenido, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 140, 830, 450));
 
-        javax.swing.GroupLayout pnlContenidoLayout = new javax.swing.GroupLayout(pnlContenido);
-        pnlContenido.setLayout(pnlContenidoLayout);
-        pnlContenidoLayout.setHorizontalGroup(
-            pnlContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 830, Short.MAX_VALUE)
-        );
-        pnlContenidoLayout.setVerticalGroup(
-            pnlContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 450, Short.MAX_VALUE)
-        );
+        pnlBarra.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnCerrarSesion.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         btnCerrarSesion.setText("Cerrar sesión");
@@ -173,34 +146,18 @@ public class LibraryView extends javax.swing.JFrame {
                 btnCerrarSesionActionPerformed(evt);
             }
         });
+        pnlBarra.add(btnCerrarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 10, -1, -1));
 
-        javax.swing.GroupLayout pnlVentanaLayout = new javax.swing.GroupLayout(pnlVentana);
-        pnlVentana.setLayout(pnlVentanaLayout);
-        pnlVentanaLayout.setHorizontalGroup(
-            pnlVentanaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlVentanaLayout.createSequentialGroup()
-                .addComponent(pnlOpciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(pnlVentanaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(pnlContenido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlVentanaLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnCerrarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())))
-        );
-        pnlVentanaLayout.setVerticalGroup(
-            pnlVentanaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlOpciones, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlVentanaLayout.createSequentialGroup()
-                .addGap(10, 10, 10)
-                .addComponent(btnCerrarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 100, Short.MAX_VALUE)
-                .addComponent(pnlContenido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-
-        getContentPane().add(pnlVentana, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        getContentPane().add(pnlBarra, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 0, 830, 140));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnCerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarSesionActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+        new LoginView().setVisible(true);
+    }//GEN-LAST:event_btnCerrarSesionActionPerformed
 
     private void btnUsuariosActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnUsuariosActionPerformed
         // TODO add your handling code here:
@@ -226,12 +183,6 @@ public class LibraryView extends javax.swing.JFrame {
         // TODO add your handling code here:
         mostrarJPanel(new WelcomeView());
     }// GEN-LAST:event_btnInicioActionPerformed
-
-    private void btnCerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnBuscarActionPerformed
-        // TODO add your handling code here:
-        this.dispose();
-        new LoginView().setVisible(true);
-    }// GEN-LAST:event_btnBuscarActionPerformed
 
     public static void mostrarJPanel(JPanel panel) {
         panel.setSize(830, 450);
@@ -293,8 +244,8 @@ public class LibraryView extends javax.swing.JFrame {
     private javax.swing.JButton btnPenalizaciones;
     private javax.swing.JButton btnPrestamos;
     private javax.swing.JButton btnUsuarios;
+    private javax.swing.JPanel pnlBarra;
     private static javax.swing.JPanel pnlContenido;
     private javax.swing.JPanel pnlOpciones;
-    private javax.swing.JPanel pnlVentana;
     // End of variables declaration//GEN-END:variables
 }
