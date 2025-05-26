@@ -18,6 +18,7 @@ public class LibraryView extends javax.swing.JFrame {
      */
     public LibraryView() {
         initComponents();
+        setLocationRelativeTo(null);
         mostrarJPanel(new WelcomeView());
     }
 
@@ -42,6 +43,7 @@ public class LibraryView extends javax.swing.JFrame {
         btnCerrarSesion = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Biblioteca");
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 

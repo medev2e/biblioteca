@@ -17,6 +17,7 @@ public class LoginView extends javax.swing.JFrame {
      */
     public LoginView() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -37,6 +38,7 @@ public class LoginView extends javax.swing.JFrame {
         lblContraseña = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Validación de credenciales");
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
