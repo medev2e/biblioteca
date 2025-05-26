@@ -92,7 +92,7 @@ public class BookModel {
         this.available = available;
     }
 
-    private static boolean writeFile(List<BookModel> books) {
+    public static boolean writeFile(List<BookModel> books) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(FILE))) {
             for (BookModel b : books) {
                 writer.write(String.format("%s,%s,%s,%s,%s,%s,%b%n", b.getIsbnNumber(), b.getTitle(),
@@ -147,9 +147,9 @@ public class BookModel {
                 b.setAvailable(book.getAvailable());
 
                 if (writeFile(books)) {
-                    return "Libro actualizado";
+                    return "Libro actualizado.";
                 } else {
-                    return "No se pudo actualizar el libro";
+                    return "No se pudo actualizar el libro.";
                 }
             }
         }
@@ -163,9 +163,9 @@ public class BookModel {
                 books.remove(e);
 
                 if (writeFile(books)) {
-                    return "Libro eliminado";
+                    return "Libro eliminado.";
                 } else {
-                    return "No se pudo eliminar el libro";
+                    return "No se pudo eliminar el libro.";
                 }
             }
         }

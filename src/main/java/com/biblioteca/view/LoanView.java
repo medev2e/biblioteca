@@ -161,6 +161,7 @@ public class LoanView extends javax.swing.JPanel {
         txtPrestamo.setPreferredSize(new java.awt.Dimension(285, 30));
         pnlDatosPrestamo.add(txtPrestamo, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 180, -1, -1));
 
+        txtIsbn.setEditable(false);
         txtIsbn.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         txtIsbn.setPreferredSize(new java.awt.Dimension(285, 30));
         pnlDatosPrestamo.add(txtIsbn, new org.netbeans.lib.awtextra.AbsoluteConstraints(455, 110, -1, -1));
@@ -212,7 +213,7 @@ public class LoanView extends javax.swing.JPanel {
 
     private void btnDescartarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDescartarActionPerformed
         // TODO add your handling code here:
-        mostrarJPanel(new LoanView().getPnlVerPrestamo());
+        mostrarJPanel(new BookView().getPnlVerLibro());
     }//GEN-LAST:event_btnDescartarActionPerformed
 
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed

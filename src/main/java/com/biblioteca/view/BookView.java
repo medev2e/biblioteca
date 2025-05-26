@@ -6,6 +6,7 @@ package com.biblioteca.view;
 
 import com.biblioteca.controller.BookController;
 import com.biblioteca.model.BookModel;
+import com.biblioteca.model.LoanModel;
 import static com.biblioteca.view.LibraryView.mostrarJPanel;
 import javax.swing.JButton;
 import javax.swing.JPanel;
@@ -24,7 +25,7 @@ public class BookView extends javax.swing.JPanel {
      */
     public BookView() {
         initComponents();
-        bookController = new BookController(this, new BookModel());
+        bookController = new BookController(this, new BookModel(), new LoanView(), new LoanModel());
         bookController.loadTable();
     }
 

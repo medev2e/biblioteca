@@ -101,7 +101,7 @@ public class UserController {
             userView.mostrarMensaje(UserModel.deleteUserFromFile(dtm.getValueAt(row, 0).toString()));
             loadTable();
         } else {
-            userView.mostrarMensaje("Seleccione una fila para eliminar");
+            userView.mostrarMensaje("Seleccione una fila para eliminar.");
         }
     }
 

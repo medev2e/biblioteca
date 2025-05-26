@@ -52,7 +52,7 @@ public class UserModel extends PersonModel {
         this.email = email;
     }
 
-    private static boolean writeFile(List<UserModel> users) {
+    public static boolean writeFile(List<UserModel> users) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(FILE))) {
             for (UserModel u : users) {
                 writer.write(String.format("%s,%s,%s,%s,%d,%s%n", u.getNationalId(), u.getNames(), u.getLastNames(),
@@ -86,9 +86,9 @@ public class UserModel extends PersonModel {
         users.add(user);
 
         if (writeFile(users)) {
-            return "Usuario registrado";
+            return "Usuario registrado.";
         } else {
-            return "No se pudo registrar el usuario";
+            return "No se pudo registrar el usuario.";
         }
     }
 
@@ -103,9 +103,9 @@ public class UserModel extends PersonModel {
                 u.setEmail(user.getEmail());
 
                 if (writeFile(users)) {
-                    return "Usuario actualizado";
+                    return "Usuario actualizado.";
                 } else {
-                    return "No se pudo actualizar el usuario";
+                    return "No se pudo actualizar el usuario.";
                 }
             }
         }
@@ -119,12 +119,12 @@ public class UserModel extends PersonModel {
                 users.remove(u);
 
                 if (writeFile(users)) {
-                    return "Usuario eliminado";
+                    return "Usuario eliminado.";
                 } else {
-                    return "No se pudo eliminar el usuario";
+                    return "No se pudo eliminar el usuario.";
                 }
             }
         }
-        return "Documento de identidad no encontrado";
+        return "Documento de identidad no encontrado.";
     }
 }

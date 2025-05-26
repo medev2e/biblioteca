@@ -60,7 +60,7 @@ public class LoanModel {
         this.returnDate = returnDate;
     }
 
-    private static boolean writeFile(List<LoanModel> loans) {
+    public static boolean writeFile(List<LoanModel> loans) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(FILE))) {
             for (LoanModel l : loans) {
                 writer.write(String.format("%s,%s,%s,%s%n", l.getNationalId(), l.getIsbnNumber(),
@@ -96,9 +96,9 @@ public class LoanModel {
         loans.add(loan);
 
         if (writeFile(loans)) {
-            return "Préstamo registrado";
+            return "Préstamo registrado.";
         } else {
-            return "No se pudo registrar el préstamo";
+            return "No se pudo registrar el préstamo.";
         }
     }
 
@@ -110,9 +110,9 @@ public class LoanModel {
                 l.setReturnDate(loan.getReturnDate());
 
                 if (writeFile(loans)) {
-                    return "Préstamo actualizado";
+                    return "Préstamo actualizado.";
                 } else {
-                    return "No se pudo actualizar el préstamo";
+                    return "No se pudo actualizar el préstamo.";
                 }
             }
         }
@@ -126,9 +126,9 @@ public class LoanModel {
                 loans.remove(e);
 
                 if (writeFile(loans)) {
-                    return "Libro entregado";
+                    return "Libro entregado.";
                 } else {
-                    return "No se pudo recibir la entrega";
+                    return "No se pudo recibir la entrega.";
                 }
             }
         }

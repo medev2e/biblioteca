@@ -11,19 +11,24 @@ import com.biblioteca.view.LoanView;
 
 import static com.biblioteca.view.LibraryView.mostrarJPanel;
 import java.awt.event.ActionListener;
+import java.time.LocalDate;
 import java.awt.event.ActionEvent;
 
 public class BookController {
 
+    private LoanView loanView;
+    private LoanModel loanModel;
     private BookView bookView;
     private BookModel bookModel;
 
     public BookController() {
     }
 
-    public BookController(BookView bookView, BookModel bookModel) {
+    public BookController(BookView bookView, BookModel bookModel, LoanView loanView, LoanModel loanModel) {
         this.bookView = bookView;
         this.bookModel = bookModel;
+        this.loanView = loanView;
+        this.loanModel = loanModel;
     }
 
     public void createBook() {
@@ -118,7 +123,7 @@ public class BookController {
             bookView.mostrarMensaje(BookModel.deleteBookFromFile(dtm.getValueAt(row, 0).toString()));
             loadTable();
         } else {
-            bookView.mostrarMensaje("Seleccione una fila para eliminar");
+            bookView.mostrarMensaje("Seleccione una fila para eliminar.");
         }
     }
 
@@ -130,18 +135,45 @@ public class BookController {
 
             if (Boolean.parseBoolean(dtm.getValueAt(row, 6).toString())) {
 
-                LoanView loanView = new LoanView();
-
-                loanView.setEditableTxtIsbn(false);
+                loanView.getBtnInsertar().setText("Registrar");
+                loanView.setLblTituloDatosPrestamo("Nuevo préstamo");
                 loanView.setTxtIsbn(dtm.getValueAt(row, 0).toString());
+                loanView.setTxtPrestamo(LocalDate.now());
 
-                new LoanController(loanView, new LoanModel()).createLoan();
+                mostrarJPanel(loanView.getPnlDatosPrestamo());
+
+                loanView.getBtnInsertar().addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent evt) {
+
+                        loanModel.setNationalId(loanView.getTxtIdentificacion());
+                        loanModel.setIsbnNumber(loanView.getTxtIsbn());
+                        loanModel.setLoanDate(loanView.getTxtPrestamo());
+                        loanModel.setReturnDate(loanView.getTxtEntrega());
+
+                        loanView.mostrarMensaje(LoanModel.createLoanInFile(loanModel));
+
+                        List<BookModel> books = BookModel.readFile();
+
+                        for (BookModel b : books) {
+                            if (b.getIsbnNumber().equals(dtm.getValueAt(row, 0).toString())) {
+                                b.setAvailable(false);
+
+                                BookModel.writeFile(books);
+                            }
+                        }
+
+                        mostrarJPanel(new LoanView().getPnlVerPrestamo());
+
+                        loanView.getBtnInsertar().removeActionListener(this);
+                    }
+                });
             } else {
-                bookView.mostrarMensaje("Libro no disponible, ya ha sido prestado.");
+                bookView.mostrarMensaje("Libro no disponible.");
             }
 
         } else {
-            bookView.mostrarMensaje("Seleccione un libro para prestar");
+            bookView.mostrarMensaje("Seleccione un libro para prestar.");
         }
     }
 

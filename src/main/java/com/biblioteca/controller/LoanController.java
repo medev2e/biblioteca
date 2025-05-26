@@ -3,6 +3,8 @@ package com.biblioteca.controller;
 import java.util.List;
 
 import javax.swing.table.DefaultTableModel;
+
+import com.biblioteca.model.BookModel;
 import com.biblioteca.model.LoanModel;
 import static com.biblioteca.view.LibraryView.mostrarJPanel;
 
@@ -22,32 +24,6 @@ public class LoanController {
     public LoanController(LoanView loanView, LoanModel loanModel) {
         this.loanView = loanView;
         this.loanModel = loanModel;
-    }
-
-    public void createLoan() {
-
-        loanView.getBtnInsertar().setText("Registrar");
-        loanView.setLblTituloDatosPrestamo("Nuevo préstamo");
-        loanView.setTxtPrestamo(LocalDate.now());
-
-        mostrarJPanel(loanView.getPnlDatosPrestamo());
-
-        loanView.getBtnInsertar().addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent evt) {
-
-                loanModel.setNationalId(loanView.getTxtIdentificacion());
-                loanModel.setIsbnNumber(loanView.getTxtIsbn());
-                loanModel.setLoanDate(loanView.getTxtPrestamo());
-                loanModel.setReturnDate(loanView.getTxtEntrega());
-
-                loanView.mostrarMensaje(LoanModel.createLoanInFile(loanModel));
-
-                mostrarJPanel(new LoanView().getPnlVerPrestamo());
-
-                loanView.getBtnInsertar().removeActionListener(this);
-            }
-        });
     }
 
     public void updateLoan() {
@@ -97,11 +73,21 @@ public class LoanController {
 
         if (row != -1) {
 
+            List<BookModel> books = BookModel.readFile();
+
+            for (BookModel b : books) {
+                if (b.getIsbnNumber().equals(dtm.getValueAt(row, 1).toString())) {
+                    b.setAvailable(true);
+
+                    BookModel.writeFile(books);
+                }
+            }
+
             loanView.mostrarMensaje(
                     LoanModel.deleteLoanFromFile(dtm.getValueAt(row, 0).toString(), dtm.getValueAt(row, 1).toString()));
             loadTable();
         } else {
-            loanView.mostrarMensaje("Seleccione una fila para recibir entrega");
+            loanView.mostrarMensaje("Seleccione una fila para recibir entrega.");
         }
     }
 
