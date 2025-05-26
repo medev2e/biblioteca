@@ -9,6 +9,7 @@ import com.biblioteca.model.LoanModel;
 import static com.biblioteca.view.LibraryView.mostrarJPanel;
 import java.time.LocalDate;
 import javax.swing.JButton;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTable;
 
@@ -213,7 +214,7 @@ public class LoanView extends javax.swing.JPanel {
 
     private void btnDescartarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDescartarActionPerformed
         // TODO add your handling code here:
-        mostrarJPanel(new BookView().getPnlVerLibro());
+        mostrarJPanel(new LoanView().getPnlVerPrestamo());
     }//GEN-LAST:event_btnDescartarActionPerformed
 
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
@@ -286,8 +287,12 @@ public class LoanView extends javax.swing.JPanel {
         txtIsbn.setEditable(opcion);
     }
     
-    public void mostrarMensaje(String mensaje) {
-        javax.swing.JOptionPane.showMessageDialog(this, mensaje);
+    public void mostrarMensaje(String mensaje, int tipo) {
+        if (tipo == JOptionPane.WARNING_MESSAGE) {
+            javax.swing.JOptionPane.showMessageDialog(this, mensaje, "Adventencia", tipo);
+        } else if (tipo == JOptionPane.INFORMATION_MESSAGE){
+            javax.swing.JOptionPane.showMessageDialog(this, mensaje, "Acción completada", tipo);
+        }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

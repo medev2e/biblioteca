@@ -158,9 +158,9 @@ public class BookModel {
 
     public static String deleteBookFromFile(String isbnNumber) {
         List<BookModel> books = readFile();
-        for (int e = 0; e < books.size(); e++) {
-            if (books.get(e).getIsbnNumber().equals(isbnNumber)) {
-                books.remove(e);
+        for (int b = 0; b < books.size(); b++) {
+            if (books.get(b).getIsbnNumber().equals(isbnNumber)) {
+                books.remove(b);
 
                 if (writeFile(books)) {
                     return "Libro eliminado.";

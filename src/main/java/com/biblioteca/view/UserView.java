@@ -5,9 +5,11 @@
 package com.biblioteca.view;
 
 import com.biblioteca.controller.UserController;
+import com.biblioteca.model.PenaltyModel;
 import com.biblioteca.model.UserModel;
 import static com.biblioteca.view.LibraryView.mostrarJPanel;
 import javax.swing.JButton;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTable;
 
@@ -24,7 +26,7 @@ public class UserView extends javax.swing.JPanel {
      */
     public UserView() {
         initComponents();
-        userController = new UserController(this, new UserModel());
+        userController = new UserController(this, new UserModel(), new PenaltyView(), new PenaltyModel());
         userController.loadTable();
     }
 
@@ -46,6 +48,7 @@ public class UserView extends javax.swing.JPanel {
         btnBuscar = new javax.swing.JButton();
         lblTituloVerUsuario = new javax.swing.JLabel();
         btnNuevo = new javax.swing.JButton();
+        btnPenalizar = new javax.swing.JButton();
         pnlDatosUsuario = new javax.swing.JPanel();
         lblTituloDatosUsuario = new javax.swing.JLabel();
         txtDireccion = new javax.swing.JTextField();
@@ -121,7 +124,7 @@ public class UserView extends javax.swing.JPanel {
                 btnEditarActionPerformed(evt);
             }
         });
-        pnlVerUsuario.add(btnEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(634, 410, -1, -1));
+        pnlVerUsuario.add(btnEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(534, 410, -1, -1));
 
         btnEliminar.setBackground(new java.awt.Color(204, 204, 255));
         btnEliminar.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
@@ -133,7 +136,7 @@ public class UserView extends javax.swing.JPanel {
                 btnEliminarActionPerformed(evt);
             }
         });
-        pnlVerUsuario.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(734, 410, -1, -1));
+        pnlVerUsuario.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(634, 410, -1, -1));
 
         txtBuscar.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         txtBuscar.setMinimumSize(new java.awt.Dimension(64, 30));
@@ -162,7 +165,19 @@ public class UserView extends javax.swing.JPanel {
                 btnNuevoActionPerformed(evt);
             }
         });
-        pnlVerUsuario.add(btnNuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(534, 410, -1, -1));
+        pnlVerUsuario.add(btnNuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(434, 410, -1, -1));
+
+        btnPenalizar.setBackground(new java.awt.Color(204, 204, 255));
+        btnPenalizar.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
+        btnPenalizar.setText("Penalizar");
+        btnPenalizar.setBorder(null);
+        btnPenalizar.setPreferredSize(new java.awt.Dimension(90, 30));
+        btnPenalizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPenalizarActionPerformed(evt);
+            }
+        });
+        pnlVerUsuario.add(btnPenalizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(734, 410, -1, -1));
 
         add(pnlVerUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
@@ -269,6 +284,11 @@ public class UserView extends javax.swing.JPanel {
         mostrarJPanel(new UserView().getPnlVerUsuario());
     }//GEN-LAST:event_btnDescartarActionPerformed
 
+    private void btnPenalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPenalizarActionPerformed
+        // TODO add your handling code here:
+        userController.penalizeUser();
+    }//GEN-LAST:event_btnPenalizarActionPerformed
+
     public void setTxtIdentificacion(String identificacion) {
         txtIdentificacion.setText(identificacion);
     }
@@ -341,8 +361,12 @@ public class UserView extends javax.swing.JPanel {
         return btnInsertar;
     }
 
-    public void mostrarMensaje(String mensaje) {
-        javax.swing.JOptionPane.showMessageDialog(this, mensaje);
+    public void mostrarMensaje(String mensaje, int tipo) {
+        if (tipo == JOptionPane.WARNING_MESSAGE) {
+            javax.swing.JOptionPane.showMessageDialog(this, mensaje, "Adventencia", tipo);
+        } else if (tipo == JOptionPane.INFORMATION_MESSAGE){
+            javax.swing.JOptionPane.showMessageDialog(this, mensaje, "Acción completada", tipo);
+        }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -352,6 +376,7 @@ public class UserView extends javax.swing.JPanel {
     private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnInsertar;
     private javax.swing.JButton btnNuevo;
+    private javax.swing.JButton btnPenalizar;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblApellido;
     private javax.swing.JLabel lblCorreo;

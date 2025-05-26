@@ -70,15 +70,16 @@ public class PenaltyModel {
         isPaid = paid;
     }
 
-    public static String writeFile(List<PenaltyModel> penalties) {
+    public static boolean writeFile(List<PenaltyModel> penalties) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(FILE))) {
             for (PenaltyModel p : penalties) {
                 writer.write(String.format("%s,%s,%s,%.2f,%b%n", p.getNationalId(), p.getReason(),
                         p.getAdditionalNotes(), p.getPenaltyAmount(), p.getIsPaid()));
             }
-            return "Penalización creada";
+            return true;
         } catch (IOException e) {
-            return ("Error al escribir el archivo [penalties.txt]: " + e.getMessage());
+            System.err.println("Error al escribir el archivo [penalties.txt]: " + e.getMessage());
+            return false;
         }
     }
 
@@ -94,18 +95,23 @@ public class PenaltyModel {
                 }
             }
         } catch (IOException e) {
-            System.err.println("Error al leer las penalizaciones: " + e.getMessage());
+            System.err.println("Error al leer el archivo [penalties.txt]: " + e.getMessage());
         }
         return penalties;
     }
 
-    public static String createLoan(PenaltyModel penalty) {
+    public static String createPenaltyInFile(PenaltyModel penalty) {
         List<PenaltyModel> penalties = readFile();
         penalties.add(penalty);
-        return writeFile(penalties);
+
+        if (writeFile(penalties)) {
+            return "Penalización registrada.";
+        } else {
+            return "No se pudo registrar la penalización.";
+        }
     }
 
-    public static String updateLoan(PenaltyModel penalty) {
+    public static String updatePenaltyInFile(PenaltyModel penalty) {
         List<PenaltyModel> penalties = readFile();
         for (PenaltyModel p : penalties) {
             if (p.getNationalId().equals(penalty.getNationalId())) {
@@ -113,18 +119,28 @@ public class PenaltyModel {
                 p.setAdditionalNotes(penalty.getAdditionalNotes());
                 p.setPenaltyAmount(penalty.getPenaltyAmount());
                 p.setIsPaid(penalty.getIsPaid());
-                return writeFile(penalties);
+
+                if (writeFile(penalties)) {
+                    return "Penalización actualizada.";
+                } else {
+                    return "No se pudo actualizar la penalización.";
+                }
             }
         }
         return "Documento de identidad no encontrado.";
     }
 
-    public static String deleteLoan(PenaltyModel penalty) {
+    public static String deletePenaltyFromFile(String nationalId) {
         List<PenaltyModel> penalties = readFile();
         for (int e = 0; e < penalties.size(); e++) {
-            if (penalties.get(e).getNationalId().equals(penalty.getNationalId())) {
+            if (penalties.get(e).getNationalId().equals(nationalId)) {
                 penalties.remove(e);
-                return writeFile(penalties);
+
+                if (writeFile(penalties)) {
+                    return "Penalización eliminada.";
+                } else {
+                    return "No se pudo eliminar la penalización.";
+                }
             }
         }
         return "Documento de identidad no encontrado.";

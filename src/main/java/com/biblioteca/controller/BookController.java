@@ -3,13 +3,11 @@ package com.biblioteca.controller;
 import java.util.List;
 
 import javax.swing.table.DefaultTableModel;
-
 import com.biblioteca.model.BookModel;
 import com.biblioteca.model.LoanModel;
 import com.biblioteca.model.UserModel;
 import com.biblioteca.view.BookView;
 import com.biblioteca.view.LoanView;
-
 import static com.biblioteca.view.LibraryView.mostrarJPanel;
 import java.awt.event.ActionListener;
 import java.time.LocalDate;
@@ -62,7 +60,7 @@ public class BookController {
                 bookModel.setEdition(bookView.getTxtEdicion());
                 bookModel.setAvailable(true);
 
-                bookView.mostrarMensaje(BookModel.createBookInFile(bookModel));
+                bookView.mostrarMensaje(BookModel.createBookInFile(bookModel), 1);
 
                 mostrarJPanel(new BookView().getPnlVerLibro());
 
@@ -103,7 +101,7 @@ public class BookController {
                     bookModel.setEdition(bookView.getTxtEdicion());
                     bookModel.setAvailable(Boolean.parseBoolean(dtm.getValueAt(row, 6).toString()));
 
-                    bookView.mostrarMensaje(BookModel.updateBookInFile(bookModel));
+                    bookView.mostrarMensaje(BookModel.updateBookInFile(bookModel), 1);
 
                     mostrarJPanel(new BookView().getPnlVerLibro());
 
@@ -111,7 +109,7 @@ public class BookController {
                 }
             });
         } else {
-            bookView.mostrarMensaje("Seleccione una fila para editar.");
+            bookView.mostrarMensaje("Seleccione una fila para editar.", 2);
         }
     }
 
@@ -121,10 +119,10 @@ public class BookController {
         int row = bookView.getTblDatos().getSelectedRow();
 
         if (row != -1) {
-            bookView.mostrarMensaje(BookModel.deleteBookFromFile(dtm.getValueAt(row, 0).toString()));
+            bookView.mostrarMensaje(BookModel.deleteBookFromFile(dtm.getValueAt(row, 0).toString()), 1);
             loadTable();
         } else {
-            bookView.mostrarMensaje("Seleccione una fila para eliminar.");
+            bookView.mostrarMensaje("Seleccione una fila para eliminar.", 2);
         }
     }
 
@@ -169,23 +167,23 @@ public class BookController {
                                     }
                                 }
 
-                                loanView.mostrarMensaje(LoanModel.createLoanInFile(loanModel));
+                                loanView.mostrarMensaje(LoanModel.createLoanInFile(loanModel), 1);
                                 mostrarJPanel(new LoanView().getPnlVerPrestamo());
                                 loanView.getBtnInsertar().removeActionListener(this);
                             }
                         }
 
                         if (!userFound) {
-                            loanView.mostrarMensaje("Documento de identidad no encontrado.");
+                            loanView.mostrarMensaje("Documento de identidad no encontrado.", 2);
                         }
                     }
                 });
             } else {
-                bookView.mostrarMensaje("Libro no disponible.");
+                bookView.mostrarMensaje("Libro no disponible.", 2);
             }
 
         } else {
-            bookView.mostrarMensaje("Seleccione un libro para prestar.");
+            bookView.mostrarMensaje("Seleccione un libro para prestar.", 2);
         }
     }
 

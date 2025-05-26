@@ -1,13 +1,10 @@
 package com.biblioteca.controller;
 
 import java.util.List;
-
 import javax.swing.table.DefaultTableModel;
-
 import com.biblioteca.model.BookModel;
 import com.biblioteca.model.LoanModel;
 import static com.biblioteca.view.LibraryView.mostrarJPanel;
-
 import com.biblioteca.view.LoanView;
 import java.awt.event.ActionListener;
 import java.time.LocalDate;
@@ -54,7 +51,7 @@ public class LoanController {
                     loanModel.setLoanDate(loanView.getTxtPrestamo());
                     loanModel.setReturnDate(loanView.getTxtEntrega());
 
-                    loanView.mostrarMensaje(LoanModel.updateLoanInFile(loanModel));
+                    loanView.mostrarMensaje(LoanModel.updateLoanInFile(loanModel), 1);
 
                     mostrarJPanel(new LoanView().getPnlVerPrestamo());
 
@@ -62,7 +59,7 @@ public class LoanController {
                 }
             });
         } else {
-            loanView.mostrarMensaje("Seleccione una fila para editar.");
+            loanView.mostrarMensaje("Seleccione una fila para editar.", 2);
         }
     }
 
@@ -84,10 +81,11 @@ public class LoanController {
             }
 
             loanView.mostrarMensaje(
-                    LoanModel.deleteLoanFromFile(dtm.getValueAt(row, 0).toString(), dtm.getValueAt(row, 1).toString()));
+                    LoanModel.deleteLoanFromFile(dtm.getValueAt(row, 0).toString(), dtm.getValueAt(row, 1).toString()),
+                    1);
             loadTable();
         } else {
-            loanView.mostrarMensaje("Seleccione una fila para recibir entrega.");
+            loanView.mostrarMensaje("Seleccione una fila para recibir entrega.", 2);
         }
     }
 

@@ -9,6 +9,7 @@ import com.biblioteca.model.BookModel;
 import com.biblioteca.model.LoanModel;
 import static com.biblioteca.view.LibraryView.mostrarJPanel;
 import javax.swing.JButton;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTable;
 
@@ -357,8 +358,12 @@ public class BookView extends javax.swing.JPanel {
         txtTitulo.setText(titulo);
     }
 
-    public void mostrarMensaje(String mensaje) {
-        javax.swing.JOptionPane.showMessageDialog(this, mensaje);
+    public void mostrarMensaje(String mensaje, int tipo) {
+        if (tipo == JOptionPane.WARNING_MESSAGE) {
+            javax.swing.JOptionPane.showMessageDialog(this, mensaje, "Adventencia", tipo);
+        } else if (tipo == JOptionPane.INFORMATION_MESSAGE){
+            javax.swing.JOptionPane.showMessageDialog(this, mensaje, "Acción completada", tipo);
+        }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

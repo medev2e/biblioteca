@@ -214,12 +214,12 @@ public class LibraryView extends javax.swing.JFrame {
 
     private void btnPrestamosActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnPrestamosActionPerformed
         // TODO add your handling code here:
-        mostrarJPanel(new LoanView());
+        mostrarJPanel(new LoanView().getPnlVerPrestamo());
     }// GEN-LAST:event_btnPrestamosActionPerformed
 
     private void btnPenalizacionesActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnPenalizacionesActionPerformed
         // TODO add your handling code here:
-        mostrarJPanel(new PenaltyView());
+        mostrarJPanel(new PenaltyView().getPnlVerPenalizacion());
     }// GEN-LAST:event_btnPenalizacionesActionPerformed
 
     private void btnInicioActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnInicioActionPerformed
