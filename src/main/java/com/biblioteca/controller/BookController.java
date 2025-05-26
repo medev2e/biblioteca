@@ -6,6 +6,7 @@ import javax.swing.table.DefaultTableModel;
 
 import com.biblioteca.model.BookModel;
 import com.biblioteca.model.LoanModel;
+import com.biblioteca.model.UserModel;
 import com.biblioteca.view.BookView;
 import com.biblioteca.view.LoanView;
 
@@ -151,21 +152,32 @@ public class BookController {
                         loanModel.setLoanDate(loanView.getTxtPrestamo());
                         loanModel.setReturnDate(loanView.getTxtEntrega());
 
-                        loanView.mostrarMensaje(LoanModel.createLoanInFile(loanModel));
+                        List<UserModel> users = UserModel.readFile();
+                        boolean userFound = false;
 
-                        List<BookModel> books = BookModel.readFile();
+                        for (UserModel u : users) {
+                            if (u.getNationalId().equals(loanModel.getNationalId())) {
+                                List<BookModel> books = BookModel.readFile();
+                                userFound = true;
 
-                        for (BookModel b : books) {
-                            if (b.getIsbnNumber().equals(dtm.getValueAt(row, 0).toString())) {
-                                b.setAvailable(false);
+                                for (BookModel b : books) {
+                                    if (b.getIsbnNumber().equals(loanModel.getIsbnNumber())) {
+                                        b.setAvailable(false);
 
-                                BookModel.writeFile(books);
+                                        BookModel.writeFile(books);
+
+                                    }
+                                }
+
+                                loanView.mostrarMensaje(LoanModel.createLoanInFile(loanModel));
+                                mostrarJPanel(new LoanView().getPnlVerPrestamo());
+                                loanView.getBtnInsertar().removeActionListener(this);
                             }
                         }
 
-                        mostrarJPanel(new LoanView().getPnlVerPrestamo());
-
-                        loanView.getBtnInsertar().removeActionListener(this);
+                        if (!userFound) {
+                            loanView.mostrarMensaje("Documento de identidad no encontrado.");
+                        }
                     }
                 });
             } else {
