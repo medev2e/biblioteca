@@ -3,7 +3,6 @@ package com.biblioteca.controller;
 import java.util.List;
 import javax.swing.BoxLayout;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
@@ -124,8 +123,7 @@ public class PenaltyController {
             reasonArea.setPreferredSize(new Dimension(300, 80));
             notesArea.setPreferredSize(new Dimension(300, 80));
 
-            javax.swing.JOptionPane.showMessageDialog(null, panel, "Información de penalización",
-                    JOptionPane.DEFAULT_OPTION);
+            penaltyView.mostrarMensaje(panel, 0);
         } else {
             penaltyView.mostrarMensaje("Seleccione una fila para mostrar información adicional.", 2);
         }

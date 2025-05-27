@@ -41,15 +41,16 @@ public class EmployeeModel extends PersonModel {
         this.username = username;
     }
 
-    public static String writeFile(List<EmployeeModel> employees) {
+    public static boolean writeFile(List<EmployeeModel> employees) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(FILE))) {
             for (EmployeeModel e : employees) {
                 writer.write(String.format("%s,%s,%s,%s,%s%n", e.getNationalId(), e.getNames(), e.getLastNames(),
                         e.getUsername(), e.getPassword()));
             }
-            return "Empleado creado";
+            return true;
         } catch (IOException e) {
-            return ("Error al escribir el archivo [employees.txt]: " + e.getMessage());
+            System.err.println("Error al escribir el archivo [employees.txt]: " + e.getMessage());
+            return false;
         }
     }
 
@@ -81,7 +82,12 @@ public class EmployeeModel extends PersonModel {
     public static String createEmployee(EmployeeModel employee) {
         List<EmployeeModel> employees = readFile();
         employees.add(employee);
-        return writeFile(employees);
+
+        if (writeFile(employees)) {
+            return "Empleado registrado";
+        } else {
+            return "No se pudo registrar el empleado";
+        }
     }
 
     public static String updateEmployee(EmployeeModel employee) {
@@ -92,20 +98,14 @@ public class EmployeeModel extends PersonModel {
                 e.setLastNames(employee.getLastNames());
                 e.setUsername(employee.getUsername());
                 e.setPassword(employee.getPassword());
-                return writeFile(employees);
+
+                if (writeFile(employees)) {
+                    return "Empleado actualizado";
+                } else {
+                    return "No se pudo actualizar el empleado";
+                }
             }
         }
         return "Documento de identidad no encontrado.";
-    }
-
-    public static String deleteEmployee(EmployeeModel employee) {
-        List<EmployeeModel> employees = readFile();
-        for (int e = 0; e < employees.size(); e++) {
-            if (employees.get(e).getNationalId().equals(employee.getNationalId())) {
-                employees.remove(e);
-                return writeFile(employees);
-            }
-        }
-        return "Documento de identidad no encontrado";
     }
 }

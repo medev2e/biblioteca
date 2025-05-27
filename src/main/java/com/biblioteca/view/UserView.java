@@ -361,13 +361,13 @@ public class UserView extends javax.swing.JPanel {
         return btnInsertar;
     }
 
-    public void mostrarMensaje(String mensaje, int tipo) {
+    public void mostrarMensaje(Object objeto, int tipo) {
         if (tipo == JOptionPane.WARNING_MESSAGE) {
-            javax.swing.JOptionPane.showMessageDialog(this, mensaje, "Adventencia", tipo);
+            javax.swing.JOptionPane.showMessageDialog(this, objeto, "Adventencia", tipo);
         } else if (tipo == JOptionPane.INFORMATION_MESSAGE){
-            javax.swing.JOptionPane.showMessageDialog(this, mensaje, "Acción completada", tipo);
+            javax.swing.JOptionPane.showMessageDialog(this, objeto, "Acción completada", tipo);
         } else {
-            javax.swing.JOptionPane.showMessageDialog(this, "mostrarMensaje() solo admite [1] ó [2] como parametro de tipo", "Problema de opción", tipo);
+            javax.swing.JOptionPane.showMessageDialog(this, objeto, "._.", JOptionPane.DEFAULT_OPTION);
         }
     }
 
