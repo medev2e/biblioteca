@@ -1,11 +1,18 @@
 package com.biblioteca.controller;
 
 import java.util.List;
+import javax.swing.BoxLayout;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
 import javax.swing.table.DefaultTableModel;
 import com.biblioteca.model.PenaltyModel;
 import com.biblioteca.view.PenaltyView;
 import static com.biblioteca.view.LibraryView.mostrarJPanel;
 import java.awt.event.ActionListener;
+import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 
 public class PenaltyController {
@@ -62,7 +69,7 @@ public class PenaltyController {
         }
     }
 
-    public void deleteBook() {
+    public void deletePenalty() {
 
         DefaultTableModel dtm = (DefaultTableModel) penaltyView.getTblDatos().getModel();
         int row = penaltyView.getTblDatos().getSelectedRow();
@@ -96,8 +103,50 @@ public class PenaltyController {
         if (row != -1) {
 
             List<PenaltyModel> penalties = PenaltyModel.readFile();
+
+            JTextArea reasonArea = new JTextArea(penalties.get(row).getReason());
+            reasonArea.setEditable(false);
+            reasonArea.setLineWrap(true);
+            reasonArea.setWrapStyleWord(true);
+
+            JTextArea notesArea = new JTextArea(penalties.get(row).getAdditionalNotes());
+            notesArea.setEditable(false);
+            notesArea.setLineWrap(true);
+            notesArea.setWrapStyleWord(true);
+
+            JPanel panel = new JPanel();
+            panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
+            panel.add(new JLabel("Razón de la amonestación:"));
+            panel.add(new JScrollPane(reasonArea));
+            panel.add(new JLabel("Notas adicionales:"));
+            panel.add(new JScrollPane(notesArea));
+
+            reasonArea.setPreferredSize(new Dimension(300, 80));
+            notesArea.setPreferredSize(new Dimension(300, 80));
+
+            javax.swing.JOptionPane.showMessageDialog(null, panel, "Información de penalización",
+                    JOptionPane.DEFAULT_OPTION);
         } else {
             penaltyView.mostrarMensaje("Seleccione una fila para mostrar información adicional.", 2);
+        }
+    }
+
+    public void payPenalty() {
+        int row = penaltyView.getTblDatos().getSelectedRow();
+
+        List<PenaltyModel> penalties = PenaltyModel.readFile();
+
+        if (row != -1) {
+
+            penalties.get(row).setIsPaid(true);
+            if (PenaltyModel.writeFile(penalties)) {
+                penaltyView.mostrarMensaje("Amonestación pagada.", 1);
+                loadTable();
+            } else {
+                penaltyView.mostrarMensaje("No pudo ser pagada la amonestación.", 2);
+            }
+        } else {
+            penaltyView.mostrarMensaje("Seleccione una fila para pagar penalización.", 2);
         }
     }
 }

@@ -64,7 +64,7 @@ public class UserView extends javax.swing.JPanel {
         lblDireccion = new javax.swing.JLabel();
         lblApellido = new javax.swing.JLabel();
         btnInsertar = new javax.swing.JButton();
-        btnDescartar = new javax.swing.JButton();
+        btnVolver = new javax.swing.JButton();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -249,17 +249,17 @@ public class UserView extends javax.swing.JPanel {
         btnInsertar.setPreferredSize(new java.awt.Dimension(90, 30));
         pnlDatosUsuario.add(btnInsertar, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 345, -1, -1));
 
-        btnDescartar.setBackground(new java.awt.Color(204, 204, 255));
-        btnDescartar.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
-        btnDescartar.setText("Descartar");
-        btnDescartar.setBorder(null);
-        btnDescartar.setPreferredSize(new java.awt.Dimension(90, 30));
-        btnDescartar.addActionListener(new java.awt.event.ActionListener() {
+        btnVolver.setBackground(new java.awt.Color(204, 204, 255));
+        btnVolver.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
+        btnVolver.setText("Volver");
+        btnVolver.setBorder(null);
+        btnVolver.setPreferredSize(new java.awt.Dimension(90, 30));
+        btnVolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDescartarActionPerformed(evt);
+                btnVolverActionPerformed(evt);
             }
         });
-        pnlDatosUsuario.add(btnDescartar, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 345, -1, -1));
+        pnlDatosUsuario.add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 345, -1, -1));
 
         add(pnlDatosUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 0, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
@@ -279,10 +279,10 @@ public class UserView extends javax.swing.JPanel {
         userController.createUser();
     }//GEN-LAST:event_btnNuevoActionPerformed
 
-    private void btnDescartarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDescartarActionPerformed
+    private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
         // TODO add your handling code here:
         mostrarJPanel(new UserView().getPnlVerUsuario());
-    }//GEN-LAST:event_btnDescartarActionPerformed
+    }//GEN-LAST:event_btnVolverActionPerformed
 
     private void btnPenalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPenalizarActionPerformed
         // TODO add your handling code here:
@@ -366,17 +366,19 @@ public class UserView extends javax.swing.JPanel {
             javax.swing.JOptionPane.showMessageDialog(this, mensaje, "Adventencia", tipo);
         } else if (tipo == JOptionPane.INFORMATION_MESSAGE){
             javax.swing.JOptionPane.showMessageDialog(this, mensaje, "Acción completada", tipo);
+        } else {
+            javax.swing.JOptionPane.showMessageDialog(this, "mostrarMensaje() solo admite [1] ó [2] como parametro de tipo", "Problema de opción", tipo);
         }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuscar;
-    private javax.swing.JButton btnDescartar;
     private javax.swing.JButton btnEditar;
     private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnInsertar;
     private javax.swing.JButton btnNuevo;
     private javax.swing.JButton btnPenalizar;
+    private javax.swing.JButton btnVolver;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblApellido;
     private javax.swing.JLabel lblCorreo;

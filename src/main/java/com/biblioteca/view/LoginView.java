@@ -43,12 +43,15 @@ public class LoginView extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         pnlVentana.setBackground(new java.awt.Color(204, 204, 255));
+        pnlVentana.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         txtUsuario.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         txtUsuario.setPreferredSize(new java.awt.Dimension(185, 30));
+        pnlVentana.add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 260, -1, -1));
 
         txtContraseña.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         txtContraseña.setPreferredSize(new java.awt.Dimension(185, 30));
+        pnlVentana.add(txtContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 345, -1, -1));
 
         btnIniciarSesion.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         btnIniciarSesion.setText("Iniciar sesión");
@@ -58,49 +61,19 @@ public class LoginView extends javax.swing.JFrame {
                 btnIniciarSesionActionPerformed(evt);
             }
         });
+        pnlVentana.add(btnIniciarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 405, -1, -1));
 
         lblUsuario.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
         lblUsuario.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblUsuario.setText("Usuario");
         lblUsuario.setPreferredSize(new java.awt.Dimension(185, 30));
+        pnlVentana.add(lblUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 225, -1, -1));
 
         lblContraseña.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
         lblContraseña.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblContraseña.setText("Contraseña");
         lblContraseña.setPreferredSize(new java.awt.Dimension(185, 30));
-
-        javax.swing.GroupLayout pnlVentanaLayout = new javax.swing.GroupLayout(pnlVentana);
-        pnlVentana.setLayout(pnlVentanaLayout);
-        pnlVentanaLayout.setHorizontalGroup(
-            pnlVentanaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlVentanaLayout.createSequentialGroup()
-                .addGap(200, 200, 200)
-                .addComponent(btnIniciarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlVentanaLayout.createSequentialGroup()
-                .addContainerGap(170, Short.MAX_VALUE)
-                .addGroup(pnlVentanaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(170, 170, 170))
-        );
-        pnlVentanaLayout.setVerticalGroup(
-            pnlVentanaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlVentanaLayout.createSequentialGroup()
-                .addGap(225, 225, 225)
-                .addComponent(lblUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(5, 5, 5)
-                .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20)
-                .addComponent(lblContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(5, 5, 5)
-                .addComponent(txtContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
-                .addComponent(btnIniciarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(155, Short.MAX_VALUE))
-        );
+        pnlVentana.add(lblContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 310, -1, -1));
 
         getContentPane().add(pnlVentana, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 525, 590));
 

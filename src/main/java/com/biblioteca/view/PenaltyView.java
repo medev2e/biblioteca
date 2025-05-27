@@ -47,7 +47,7 @@ public class PenaltyView extends javax.swing.JPanel {
         txtBuscar = new javax.swing.JTextField();
         btnBuscar = new javax.swing.JButton();
         lblTituloVerPenalizacion = new javax.swing.JLabel();
-        btnInfo1 = new javax.swing.JButton();
+        btnInfo = new javax.swing.JButton();
         pnlDatosPenalizacion = new javax.swing.JPanel();
         lblTituloDatosPenalizacion = new javax.swing.JLabel();
         txtIdentificacion = new javax.swing.JTextField();
@@ -57,7 +57,7 @@ public class PenaltyView extends javax.swing.JPanel {
         lblRazon = new javax.swing.JLabel();
         lblNota = new javax.swing.JLabel();
         btnInsertar = new javax.swing.JButton();
-        btnDescartar = new javax.swing.JButton();
+        btnVolver = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtRazon = new javax.swing.JTextArea();
         jScrollPane3 = new javax.swing.JScrollPane();
@@ -135,6 +135,11 @@ public class PenaltyView extends javax.swing.JPanel {
         btnPagar.setToolTipText("Información sobre penalización del usuario apuntado");
         btnPagar.setBorder(null);
         btnPagar.setPreferredSize(new java.awt.Dimension(90, 30));
+        btnPagar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPagarActionPerformed(evt);
+            }
+        });
         pnlVerPenalizacion.add(btnPagar, new org.netbeans.lib.awtextra.AbsoluteConstraints(734, 410, -1, -1));
 
         txtBuscar.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
@@ -154,18 +159,18 @@ public class PenaltyView extends javax.swing.JPanel {
         lblTituloVerPenalizacion.setPreferredSize(new java.awt.Dimension(140, 30));
         pnlVerPenalizacion.add(lblTituloVerPenalizacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 10, -1, -1));
 
-        btnInfo1.setBackground(new java.awt.Color(204, 204, 255));
-        btnInfo1.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
-        btnInfo1.setText("Info");
-        btnInfo1.setToolTipText("Información sobre penalización del usuario apuntado");
-        btnInfo1.setBorder(null);
-        btnInfo1.setPreferredSize(new java.awt.Dimension(90, 30));
-        btnInfo1.addActionListener(new java.awt.event.ActionListener() {
+        btnInfo.setBackground(new java.awt.Color(204, 204, 255));
+        btnInfo.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
+        btnInfo.setText("Info");
+        btnInfo.setToolTipText("Información sobre penalización del usuario apuntado");
+        btnInfo.setBorder(null);
+        btnInfo.setPreferredSize(new java.awt.Dimension(90, 30));
+        btnInfo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnInfo1ActionPerformed(evt);
+                btnInfoActionPerformed(evt);
             }
         });
-        pnlVerPenalizacion.add(btnInfo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(434, 410, -1, -1));
+        pnlVerPenalizacion.add(btnInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(434, 410, -1, -1));
 
         add(pnlVerPenalizacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
@@ -212,17 +217,17 @@ public class PenaltyView extends javax.swing.JPanel {
         btnInsertar.setPreferredSize(new java.awt.Dimension(90, 30));
         pnlDatosPenalizacion.add(btnInsertar, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 345, -1, -1));
 
-        btnDescartar.setBackground(new java.awt.Color(204, 204, 255));
-        btnDescartar.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
-        btnDescartar.setText("Descartar");
-        btnDescartar.setBorder(null);
-        btnDescartar.setPreferredSize(new java.awt.Dimension(90, 30));
-        btnDescartar.addActionListener(new java.awt.event.ActionListener() {
+        btnVolver.setBackground(new java.awt.Color(204, 204, 255));
+        btnVolver.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
+        btnVolver.setText("Volver");
+        btnVolver.setBorder(null);
+        btnVolver.setPreferredSize(new java.awt.Dimension(90, 30));
+        btnVolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDescartarActionPerformed(evt);
+                btnVolverActionPerformed(evt);
             }
         });
-        pnlDatosPenalizacion.add(btnDescartar, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 345, -1, -1));
+        pnlDatosPenalizacion.add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 345, -1, -1));
 
         txtRazon.setColumns(20);
         txtRazon.setLineWrap(true);
@@ -230,7 +235,7 @@ public class PenaltyView extends javax.swing.JPanel {
         txtRazon.setWrapStyleWord(true);
         jScrollPane1.setViewportView(txtRazon);
 
-        pnlDatosPenalizacion.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 180, 280, 110));
+        pnlDatosPenalizacion.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 180, 280, 130));
 
         txtNota.setColumns(20);
         txtNota.setLineWrap(true);
@@ -238,15 +243,15 @@ public class PenaltyView extends javax.swing.JPanel {
         txtNota.setWrapStyleWord(true);
         jScrollPane3.setViewportView(txtNota);
 
-        pnlDatosPenalizacion.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(455, 180, 285, 110));
+        pnlDatosPenalizacion.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(455, 180, 285, 130));
 
         add(pnlDatosPenalizacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 0, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnDescartarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDescartarActionPerformed
+    private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
         // TODO add your handling code here:
         mostrarJPanel(new PenaltyView().getPnlVerPenalizacion());
-    }//GEN-LAST:event_btnDescartarActionPerformed
+    }//GEN-LAST:event_btnVolverActionPerformed
 
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
         // TODO add your handling code here:
@@ -255,13 +260,18 @@ public class PenaltyView extends javax.swing.JPanel {
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
         // TODO add your handling code here:
-        penaltyController.deleteBook();
+        penaltyController.deletePenalty();
     }//GEN-LAST:event_btnEliminarActionPerformed
 
-    private void btnInfo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInfo1ActionPerformed
+    private void btnInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInfoActionPerformed
         // TODO add your handling code here:
         penaltyController.showInfo();
-    }//GEN-LAST:event_btnInfo1ActionPerformed
+    }//GEN-LAST:event_btnInfoActionPerformed
+
+    private void btnPagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPagarActionPerformed
+        // TODO add your handling code here:
+        penaltyController.payPenalty();
+    }//GEN-LAST:event_btnPagarActionPerformed
 
     public JButton getBtnInsertar() {
         return btnInsertar;
@@ -320,17 +330,19 @@ public class PenaltyView extends javax.swing.JPanel {
             javax.swing.JOptionPane.showMessageDialog(this, mensaje, "Adventencia", tipo);
         } else if (tipo == JOptionPane.INFORMATION_MESSAGE){
             javax.swing.JOptionPane.showMessageDialog(this, mensaje, "Acción completada", tipo);
+        } else {
+            javax.swing.JOptionPane.showMessageDialog(this, "mostrarMensaje() solo admite [1] ó [2] como parametro de tipo", "Problema de opción", tipo);
         }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuscar;
-    private javax.swing.JButton btnDescartar;
     private javax.swing.JButton btnEditar;
     private javax.swing.JButton btnEliminar;
-    private javax.swing.JButton btnInfo1;
+    private javax.swing.JButton btnInfo;
     private javax.swing.JButton btnInsertar;
     private javax.swing.JButton btnPagar;
+    private javax.swing.JButton btnVolver;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
