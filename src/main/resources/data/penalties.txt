@@ -1,1 +1,3 @@
-1,oisjdas,asdasdad,1223123.00,false
+1,oisjdas,asdasdad,32123.00,true
+5,pq si,pq si,3124214.00,true
+6,er,tf,31312.00,false

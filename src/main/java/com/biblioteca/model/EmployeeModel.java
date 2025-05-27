@@ -69,7 +69,7 @@ public class EmployeeModel extends PersonModel {
         return employees;
     }
 
-    public static boolean checkEmployee(String username, String password) {
+    public static boolean checkEmployeeFromFile(String username, String password) {
         List<EmployeeModel> employees = readFile();
         for (EmployeeModel e : employees) {
             if (e.getUsername().equals(username) && e.getPassword().equals(password)) {

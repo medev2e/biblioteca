@@ -4,6 +4,7 @@
  */
 package com.biblioteca.view;
 
+import com.biblioteca.controller.EmployeeController;
 import javax.swing.JOptionPane;
 
 /**
@@ -12,12 +13,15 @@ import javax.swing.JOptionPane;
  */
 public class LoginView extends javax.swing.JFrame {
 
+    private final EmployeeController employeeController;
+    
     /**
      * Creates new form LoginView
      */
     public LoginView() {
         initComponents();
         setLocationRelativeTo(null);
+        employeeController = new EmployeeController(this);
     }
 
     /**
@@ -80,17 +84,26 @@ public class LoginView extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnIniciarSesionActionPerformed
+    private void btnIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarSesionActionPerformed
         // TODO add your handling code here:
-        this.dispose();
-        new LibraryView().setVisible(true);
-    }// GEN-LAST:event_btnIniciarSesionActionPerformed
-
-    public void mostrarMensaje(String mensaje, int tipo) {
+        employeeController.checkEmployee();
+    }//GEN-LAST:event_btnIniciarSesionActionPerformed
+    
+    public String getTxtUsuario() {
+        return txtUsuario.getText();
+    } 
+    
+    public char[] getTxtContraseña() {
+        return txtContraseña.getPassword();
+    }
+    
+    public void mostrarMensaje(Object objeto, int tipo) {
         if (tipo == JOptionPane.WARNING_MESSAGE) {
-            javax.swing.JOptionPane.showMessageDialog(this, mensaje, "Adventencia", tipo);
+            javax.swing.JOptionPane.showMessageDialog(this, objeto, "Adventencia", tipo);
         } else if (tipo == JOptionPane.INFORMATION_MESSAGE){
-            javax.swing.JOptionPane.showMessageDialog(this, mensaje, "Acción completada", tipo);
+            javax.swing.JOptionPane.showMessageDialog(this, objeto, "Acción completada", tipo);
+        } else {
+            javax.swing.JOptionPane.showMessageDialog(this, objeto, "._.", JOptionPane.DEFAULT_OPTION);
         }
     }
     

@@ -157,6 +157,7 @@ public class LibraryView extends javax.swing.JFrame {
 
     private void btnCerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarSesionActionPerformed
         // TODO add your handling code here:
+        javax.swing.JOptionPane.showMessageDialog(this, "Sesión cerrada", "._.", 1);
         this.dispose();
         new LoginView().setVisible(true);
     }//GEN-LAST:event_btnCerrarSesionActionPerformed
