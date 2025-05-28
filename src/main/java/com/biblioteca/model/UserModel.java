@@ -87,6 +87,7 @@ public class UserModel extends PersonModel {
             return false;
 
         }
+
     }
 
     public static List<UserModel> readFile() {
@@ -105,7 +106,9 @@ public class UserModel extends PersonModel {
                             new UserModel(index[0], index[1], index[2], index[3], Long.parseLong(index[4]), index[5]));
 
                 }
+
             }
+
         } catch (IOException e) {
 
             System.err.println("Error al leer el archivo [users.txt]: " + e.getMessage());
@@ -130,6 +133,7 @@ public class UserModel extends PersonModel {
             return "No se pudo registrar el usuario.";
 
         }
+
     }
 
     public static String updateUserInFile(UserModel user) {
@@ -155,7 +159,9 @@ public class UserModel extends PersonModel {
                     return "No se pudo actualizar el usuario.";
 
                 }
+
             }
+
         }
 
         return "Documento de identidad no encontrado.";
@@ -183,9 +189,11 @@ public class UserModel extends PersonModel {
                 }
 
             }
+
         }
 
         return "Documento de identidad no encontrado.";
 
     }
+
 }

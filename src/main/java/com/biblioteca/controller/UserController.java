@@ -35,7 +35,6 @@ public class UserController {
         deleteListeners();
         userView.getBtnInsertar().setText("Registrar");
         userView.setLblTituloDatosUsuario("Nuevo usuario");
-        userView.setEditableTxtIdentificacion(true);
         mostrarJPanel(userView.getPnlDatosUsuario());
 
         userView.getBtnInsertar().addActionListener(new ActionListener() {
@@ -58,7 +57,7 @@ public class UserController {
 
                 } else if (!nationalId.matches("\\d+")) {
 
-                    userView.mostrarMensaje("El documento de identidad solo debe contener números", 2);
+                    userView.mostrarMensaje("El documento de identidad solo debe contener números enteros", 2);
 
                 } else if (validatorNationalId(nationalId)) {
 
@@ -124,7 +123,6 @@ public class UserController {
 
             userView.getBtnInsertar().setText("Editar");
             userView.setLblTituloDatosUsuario("Editar usuario");
-            userView.setEditableTxtIdentificacion(false);
 
             userView.setCboxTipoIdentificacion(typeNationalId);
             userView.setTxtIdentificacion(nationalId);
@@ -164,11 +162,12 @@ public class UserController {
                             for (UserModel u : users) {
 
                                 if (u.getNationalId().replaceAll("[^0-9]", "")
-                                        .equals(userModel.getNationalId().replaceAll("[^0-9]", ""))) {
+                                        .equals(nationalId)) {
 
                                     u.setNationalId(userModel.getNationalId());
 
                                 }
+
                             }
 
                             List<PenaltyModel> penalties = PenaltyModel.readFile();
@@ -176,7 +175,7 @@ public class UserController {
                             for (PenaltyModel p : penalties) {
 
                                 if (p.getNationalId().replaceAll("[^0-9]", "")
-                                        .equals(userModel.getNationalId().replaceAll("[^0-9]", ""))) {
+                                        .equals(nationalId)) {
 
                                     p.setNationalId(userModel.getNationalId());
 
@@ -265,7 +264,7 @@ public class UserController {
                     String reason = penaltyView.getTxtRazon();
                     String additionalNotes = penaltyView.getTxtNota();
 
-                    if (nationalId.trim().isEmpty() || penaltyAmount.trim().isEmpty() || reason.trim().isEmpty()
+                    if (penaltyAmount.trim().isEmpty() || reason.trim().isEmpty()
                             || additionalNotes.trim().isEmpty()) {
 
                         userView.mostrarMensaje("Todos los campos deben estar llenos.", 2);
@@ -313,6 +312,7 @@ public class UserController {
             penaltyView.mostrarMensaje("Seleccione un usuario para penalizar.", 2);
 
         }
+
     }
 
     public void loadTable() {
@@ -333,7 +333,9 @@ public class UserController {
                     u.getEmail()
 
             });
+
         }
+
     }
 
     private void deleteListeners() {

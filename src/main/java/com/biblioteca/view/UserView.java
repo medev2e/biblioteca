@@ -280,12 +280,6 @@ public class UserView extends javax.swing.JPanel {
         
     }
 
-    public void setEditableTxtIdentificacion(boolean opcion) {
-        
-        txtIdentificacion.setEditable(opcion);
-        
-    }
-
     public void setTxtNombres(String nombres) {
         
         txtNombres.setText(nombres);

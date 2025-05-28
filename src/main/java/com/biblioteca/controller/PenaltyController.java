@@ -50,6 +50,7 @@ public class PenaltyController {
             mostrarJPanel(penaltyView.getPnlDatosPenalizacion());
 
             penaltyView.getBtnInsertar().addActionListener(new ActionListener() {
+
                 @Override
                 public void actionPerformed(ActionEvent evt) {
 
