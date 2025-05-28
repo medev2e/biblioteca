@@ -59,7 +59,8 @@ public class PenaltyController {
                     String reason = penaltyView.getTxtRazon();
                     String additionalNotes = penaltyView.getTxtNota();
 
-                    if (penaltyAmount.trim().isEmpty() || reason.trim().isEmpty()
+                    if (penaltyAmount.trim().isEmpty()
+                            || reason.trim().isEmpty()
                             || additionalNotes.trim().isEmpty()) {
 
                         penaltyView.mostrarMensaje("Todos los campos deben estar llenos.", 2);

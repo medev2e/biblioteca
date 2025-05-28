@@ -22,7 +22,11 @@ public class PenaltyModel {
 
     }
 
-    public PenaltyModel(String nationalId, String reason, String additionalNotes, double penaltyAmount,
+    public PenaltyModel(
+            String nationalId,
+            String reason,
+            String additionalNotes,
+            double penaltyAmount,
             boolean isPaid) {
 
         this.nationalId = nationalId;
@@ -99,8 +103,13 @@ public class PenaltyModel {
 
             for (PenaltyModel p : penalties) {
 
-                writer.write(String.format("%s,%s,%s,%.2f,%b%n", p.getNationalId(), p.getReason(),
-                        p.getAdditionalNotes(), p.getPenaltyAmount(), p.getIsPaid()));
+                writer.write(String.format(
+                        "%s,%s,%s,%.2f,%b%n",
+                        p.getNationalId(),
+                        p.getReason(),
+                        p.getAdditionalNotes(),
+                        p.getPenaltyAmount(),
+                        p.getIsPaid()));
 
             }
 
@@ -127,9 +136,12 @@ public class PenaltyModel {
 
                 if (index.length == 5) {
 
-                    penalties.add(
-                            new PenaltyModel(index[0], index[1], index[2], Double.parseDouble(index[3]),
-                                    Boolean.parseBoolean(index[4])));
+                    penalties.add(new PenaltyModel(
+                            index[0],
+                            index[1],
+                            index[2],
+                            Double.parseDouble(index[3]),
+                            Boolean.parseBoolean(index[4])));
 
                 }
 

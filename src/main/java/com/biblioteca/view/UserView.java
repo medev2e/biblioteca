@@ -84,7 +84,8 @@ public class UserView extends javax.swing.JPanel {
         });
         tblDatos.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         tblDatos.setFillsViewportHeight(true);
-        tblDatos.setSelectionBackground(new java.awt.Color(153, 153, 255));
+        tblDatos.setGridColor(new java.awt.Color(153, 153, 153));
+        tblDatos.setSelectionBackground(new java.awt.Color(204, 102, 255));
         tblDatos.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         tblDatos.setShowGrid(true);
         tblDatos.getTableHeader().setReorderingAllowed(false);

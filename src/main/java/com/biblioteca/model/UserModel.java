@@ -22,7 +22,12 @@ public class UserModel extends PersonModel {
 
     }
 
-    public UserModel(String nationalId, String names, String lastNames, String address, long phoneNumber,
+    public UserModel(
+            String nationalId,
+            String names,
+            String lastNames,
+            String address,
+            long phoneNumber,
             String email) {
 
         super(nationalId, names, lastNames);
@@ -74,8 +79,14 @@ public class UserModel extends PersonModel {
 
             for (UserModel u : users) {
 
-                writer.write(String.format("%s,%s,%s,%s,%d,%s%n", u.getNationalId(), u.getNames(), u.getLastNames(),
-                        u.getAddress(), u.getPhoneNumber(), u.getEmail()));
+                writer.write(String.format(
+                        "%s,%s,%s,%s,%d,%s%n",
+                        u.getNationalId(),
+                        u.getNames(),
+                        u.getLastNames(),
+                        u.getAddress(),
+                        u.getPhoneNumber(),
+                        u.getEmail()));
 
             }
 
@@ -102,8 +113,13 @@ public class UserModel extends PersonModel {
 
                 if (index.length == 6) {
 
-                    users.add(
-                            new UserModel(index[0], index[1], index[2], index[3], Long.parseLong(index[4]), index[5]));
+                    users.add(new UserModel(
+                            index[0],
+                            index[1],
+                            index[2],
+                            index[3],
+                            Long.parseLong(index[4]),
+                            index[5]));
 
                 }
 

@@ -7,6 +7,7 @@ import com.biblioteca.model.LoanModel;
 import static com.biblioteca.view.LibraryView.mostrarJPanel;
 import com.biblioteca.view.LoanView;
 import java.awt.event.ActionListener;
+import java.time.DateTimeException;
 import java.time.LocalDate;
 import java.awt.event.ActionEvent;
 
@@ -16,11 +17,14 @@ public class LoanController {
     private LoanModel loanModel;
 
     public LoanController() {
+
     }
 
     public LoanController(LoanView loanView, LoanModel loanModel) {
+
         this.loanView = loanView;
         this.loanModel = loanModel;
+
     }
 
     public void updateLoan() {
@@ -37,30 +41,55 @@ public class LoanController {
 
             loanView.setTxtIdentificacion(dtm.getValueAt(row, 0).toString());
             loanView.setTxtIsbn(dtm.getValueAt(row, 1).toString());
-            loanView.setTxtPrestamo(LocalDate.parse(dtm.getValueAt(row, 2).toString()));
-            loanView.setTxtEntrega(LocalDate.parse(dtm.getValueAt(row, 3).toString()));
+            loanView.setTxtPrestamo(dtm.getValueAt(row, 2).toString());
+            loanView.setTxtEntrega(dtm.getValueAt(row, 3).toString());
 
             mostrarJPanel(loanView.getPnlDatosPrestamo());
 
             loanView.getBtnInsertar().addActionListener(new ActionListener() {
+
                 @Override
                 public void actionPerformed(ActionEvent evt) {
 
+                    String returnDate = loanView.getTxtEntrega();
+
                     loanModel.setNationalId(loanView.getTxtIdentificacion());
                     loanModel.setIsbnNumber(loanView.getTxtIsbn());
-                    loanModel.setLoanDate(loanView.getTxtPrestamo());
-                    loanModel.setReturnDate(loanView.getTxtEntrega());
+                    loanModel.setLoanDate(LocalDate.parse(loanView.getTxtPrestamo()));
 
-                    loanView.mostrarMensaje(LoanModel.updateLoanInFile(loanModel), 1);
+                    try {
 
-                    mostrarJPanel(new LoanView().getPnlVerPrestamo());
+                        loanModel.setReturnDate(LocalDate.parse(returnDate));
 
-                    loanView.getBtnInsertar().removeActionListener(this);
+                        if (LocalDate.parse(returnDate).isBefore(loanModel.getLoanDate())) {
+
+                            loanView.mostrarMensaje(
+                                    "La fecha de entrega debe ser mayor a la del préstamo.", 2);
+
+                        } else {
+
+                            loanView.mostrarMensaje(LoanModel.updateLoanInFile(loanModel), 1);
+                            mostrarJPanel(loanView.getPnlVerPrestamo());
+
+                        }
+
+                    } catch (DateTimeException e) {
+
+                        loanView.mostrarMensaje(
+                                "La fecha de entrega debe seguir el formato AAAA-MM-DD.", 2);
+
+                    }
+
                 }
+
             });
+
         } else {
+
             loanView.mostrarMensaje("Seleccione una fila para editar.", 2);
+
         }
+
     }
 
     public void returnLoan() {
@@ -73,34 +102,48 @@ public class LoanController {
             List<BookModel> books = BookModel.readFile();
 
             for (BookModel b : books) {
-                if (b.getIsbnNumber().equals(dtm.getValueAt(row, 1).toString())) {
-                    b.setAvailable(true);
 
+                if (b.getIsbnNumber().equals(dtm.getValueAt(row, 1).toString())) {
+
+                    b.setAvailable(true);
                     BookModel.writeFile(books);
+
                 }
+
             }
 
-            loanView.mostrarMensaje(
-                    LoanModel.deleteLoanFromFile(dtm.getValueAt(row, 0).toString(), dtm.getValueAt(row, 1).toString()),
+            loanView.mostrarMensaje(LoanModel.deleteLoanFromFile(dtm.getValueAt(row, 0).toString(),
+                    dtm.getValueAt(row, 1).toString()),
                     1);
             loadTable();
+
         } else {
+
             loanView.mostrarMensaje("Seleccione una fila para recibir entrega.", 2);
+
         }
+
     }
 
     public void loadTable() {
+
         List<LoanModel> loans = LoanModel.readFile();
         DefaultTableModel dtm = (DefaultTableModel) loanView.getTblDatos().getModel();
         dtm.setRowCount(0);
 
         for (LoanModel l : loans) {
+
             dtm.addRow(new Object[] {
+
                     l.getNationalId(),
                     l.getIsbnNumber(),
                     l.getLoanDate(),
                     l.getReturnDate()
+
             });
+
         }
+
     }
+
 }

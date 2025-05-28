@@ -21,7 +21,10 @@ public class UserController {
 
     }
 
-    public UserController(UserView userView, UserModel userModel, PenaltyView penaltyView, PenaltyModel penaltyModel) {
+    public UserController(UserView userView,
+            UserModel userModel,
+            PenaltyView penaltyView,
+            PenaltyModel penaltyModel) {
 
         this.userView = userView;
         this.userModel = userModel;
@@ -50,8 +53,12 @@ public class UserController {
                 String phoneNumber = userView.getTxtTelefono();
                 String email = userView.getTxtCorreo();
 
-                if (nationalId.trim().isEmpty() || names.trim().isEmpty() || lastNames.trim().isEmpty()
-                        || address.trim().isEmpty() || phoneNumber.trim().isEmpty() || email.trim().isEmpty()) {
+                if (nationalId.trim().isEmpty()
+                        || names.trim().isEmpty()
+                        || lastNames.trim().isEmpty()
+                        || address.trim().isEmpty()
+                        || phoneNumber.trim().isEmpty()
+                        || email.trim().isEmpty()) {
 
                     userView.mostrarMensaje("Todos los campos deben ser rellenados", 2);
 
@@ -139,8 +146,10 @@ public class UserController {
                 @Override
                 public void actionPerformed(ActionEvent evt) {
 
-                    if (userView.getTxtNombres().trim().isEmpty() || userView.getTxtApellidos().trim().isEmpty()
-                            || userView.getTxtDireccion().trim().isEmpty() || userView.getTxtTelefono().trim().isEmpty()
+                    if (userView.getTxtNombres().trim().isEmpty()
+                            || userView.getTxtApellidos().trim().isEmpty()
+                            || userView.getTxtDireccion().trim().isEmpty()
+                            || userView.getTxtTelefono().trim().isEmpty()
                             || userView.getTxtCorreo().trim().isEmpty()) {
 
                         userView.mostrarMensaje("Todos los campos deben estar llenos.", 2);

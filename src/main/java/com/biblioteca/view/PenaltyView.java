@@ -78,7 +78,11 @@ public class PenaltyView extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        tblDatos.setFillsViewportHeight(true);
+        tblDatos.setGridColor(new java.awt.Color(153, 153, 153));
+        tblDatos.setSelectionBackground(new java.awt.Color(204, 102, 255));
         tblDatos.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        tblDatos.setShowGrid(true);
         tblDatos.getTableHeader().setReorderingAllowed(false);
         jScrollPane2.setViewportView(tblDatos);
         tblDatos.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);

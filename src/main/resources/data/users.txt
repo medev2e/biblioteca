@@ -1,8 +1,1 @@
-C.C.1,jkasnd,adsd,y,1,y
-C.E.3123131323132312313213,sad,da,ad,1,da
-C.C.123,dasd,ads,ads,2,das
-C.C.1321231,adda,dasd,adsd,12,asd
-NIT1,a,a,a,1,a
-C.C.1321,assd,asd,adssad,1231,das
-C.C.123213,asdad,asda,ads,132,adsda
-C.C.123213,asdad,asda,ads,132,adsda
+C.C.1065860838,Yosangel David,Farelo Perea,Barrio Sabana del Valle,3243639265,ydfarelo@gmail.com
