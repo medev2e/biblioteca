@@ -23,6 +23,7 @@ public class LibraryView extends javax.swing.JFrame {
         btnLibros = new javax.swing.JButton();
         btnPrestamos = new javax.swing.JButton();
         btnPenalizaciones = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
         pnlContenido = new javax.swing.JPanel();
         pnlBarra = new javax.swing.JPanel();
         btnCerrarSesion = new javax.swing.JButton();
@@ -53,7 +54,7 @@ public class LibraryView extends javax.swing.JFrame {
                 btnInicioActionPerformed(evt);
             }
         });
-        pnlOpciones.add(btnInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 220, -1));
+        pnlOpciones.add(btnInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 220, -1));
 
         btnUsuarios.setBackground(new java.awt.Color(197, 200, 255));
         btnUsuarios.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
@@ -72,7 +73,7 @@ public class LibraryView extends javax.swing.JFrame {
                 btnUsuariosActionPerformed(evt);
             }
         });
-        pnlOpciones.add(btnUsuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 220, -1));
+        pnlOpciones.add(btnUsuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, 220, -1));
 
         btnLibros.setBackground(new java.awt.Color(197, 200, 255));
         btnLibros.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
@@ -91,7 +92,7 @@ public class LibraryView extends javax.swing.JFrame {
                 btnLibrosActionPerformed(evt);
             }
         });
-        pnlOpciones.add(btnLibros, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, 220, -1));
+        pnlOpciones.add(btnLibros, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 220, -1));
 
         btnPrestamos.setBackground(new java.awt.Color(197, 200, 255));
         btnPrestamos.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
@@ -110,7 +111,7 @@ public class LibraryView extends javax.swing.JFrame {
                 btnPrestamosActionPerformed(evt);
             }
         });
-        pnlOpciones.add(btnPrestamos, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 290, 220, -1));
+        pnlOpciones.add(btnPrestamos, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 330, 220, -1));
 
         btnPenalizaciones.setBackground(new java.awt.Color(197, 200, 255));
         btnPenalizaciones.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
@@ -129,7 +130,12 @@ public class LibraryView extends javax.swing.JFrame {
                 btnPenalizacionesActionPerformed(evt);
             }
         });
-        pnlOpciones.add(btnPenalizaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 340, 220, -1));
+        pnlOpciones.add(btnPenalizaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 380, 220, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo.png"))); // NOI18N
+        jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jLabel1.setIconTextGap(0);
+        pnlOpciones.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 20, -1, 100));
 
         getContentPane().add(pnlOpciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
@@ -245,6 +251,7 @@ public class LibraryView extends javax.swing.JFrame {
     private javax.swing.JButton btnPenalizaciones;
     private javax.swing.JButton btnPrestamos;
     private javax.swing.JButton btnUsuarios;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel pnlBarra;
     private static javax.swing.JPanel pnlContenido;
     private javax.swing.JPanel pnlOpciones;

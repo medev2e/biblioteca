@@ -29,6 +29,7 @@ public class LoanController {
 
     public void updateLoan() {
 
+        deleteListeners();
         DefaultTableModel dtm = (DefaultTableModel) loanView.getTblDatos().getModel();
         int row = loanView.getTblDatos().getSelectedRow();
 
@@ -153,6 +154,26 @@ public class LoanController {
                     l.getReturnDate()
 
             });
+
+        }
+
+    }
+
+    private void deleteListeners() {
+
+        ActionListener[] listeners = loanView.getBtnInsertar().getActionListeners();
+
+        for (ActionListener l : listeners) {
+
+            loanView.getBtnInsertar().removeActionListener(l);
+
+        }
+
+        listeners = loanView.getBtnVolver().getActionListeners();
+
+        for (ActionListener l : listeners) {
+
+            loanView.getBtnVolver().removeActionListener(l);
 
         }
 

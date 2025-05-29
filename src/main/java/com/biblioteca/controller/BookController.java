@@ -295,7 +295,7 @@ public class BookController {
                                     } catch (DateTimeException e) {
 
                                         loanView.mostrarMensaje(
-                                                "La fecha de entrega debe seguir el formato AAAA-MM-DD.", 2);
+                                                "La fecha de entrega debe ser válida y con formato AAAA-MM-DD.", 2);
 
                                     }
 
