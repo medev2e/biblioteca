@@ -62,7 +62,7 @@ public class PenaltyView extends javax.swing.JPanel {
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Double.class, java.lang.Boolean.class
+                java.lang.String.class, java.lang.String.class, java.lang.Boolean.class
             };
             boolean[] canEdit = new boolean [] {
                 false, false, false
@@ -76,6 +76,7 @@ public class PenaltyView extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        tblDatos.setColumnSelectionAllowed(true);
         tblDatos.setFillsViewportHeight(true);
         tblDatos.setGridColor(new java.awt.Color(153, 153, 153));
         tblDatos.setSelectionBackground(new java.awt.Color(204, 204, 204));

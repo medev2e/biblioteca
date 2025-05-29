@@ -63,7 +63,7 @@
                     <Column editable="false" title="Nombres" type="java.lang.String"/>
                     <Column editable="false" title="Apellidos" type="java.lang.String"/>
                     <Column editable="false" title="Direcci&#xf3;n" type="java.lang.String"/>
-                    <Column editable="false" title="Tel&#xe9;fono" type="java.lang.Long"/>
+                    <Column editable="false" title="Tel&#xe9;fono" type="java.lang.String"/>
                     <Column editable="false" title="Correo" type="java.lang.String"/>
                   </Table>
                 </Property>

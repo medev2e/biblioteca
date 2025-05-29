@@ -60,7 +60,7 @@
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                   <Table columnCount="3" rowCount="0">
                     <Column editable="false" title="Identificaci&#xf3;n del usuario" type="java.lang.String"/>
-                    <Column editable="false" title="Amonestaci&#xf3;n econ&#xf3;mica" type="java.lang.Double"/>
+                    <Column editable="false" title="Amonestaci&#xf3;n econ&#xf3;mica" type="java.lang.String"/>
                     <Column editable="false" title="Pagado" type="java.lang.Boolean"/>
                   </Table>
                 </Property>
@@ -83,6 +83,7 @@
                     </Column>
                   </TableColumnModel>
                 </Property>
+                <Property name="columnSelectionAllowed" type="boolean" value="true"/>
                 <Property name="fillsViewportHeight" type="boolean" value="true"/>
                 <Property name="gridColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="99" green="99" red="99" type="rgb"/>
