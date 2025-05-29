@@ -28,8 +28,6 @@ public class LoanView extends javax.swing.JPanel {
         tblDatos = new javax.swing.JTable();
         btnEditar = new javax.swing.JButton();
         btnEntrega = new javax.swing.JButton();
-        txtBuscar = new javax.swing.JTextField();
-        btnBuscar = new javax.swing.JButton();
         lblTituloVerPrestamo = new javax.swing.JLabel();
         pnlDatosPrestamo = new javax.swing.JPanel();
         lblTituloDatosPrestamo = new javax.swing.JLabel();
@@ -76,7 +74,7 @@ public class LoanView extends javax.swing.JPanel {
         });
         tblDatos.setFillsViewportHeight(true);
         tblDatos.setGridColor(new java.awt.Color(153, 153, 153));
-        tblDatos.setSelectionBackground(new java.awt.Color(204, 102, 255));
+        tblDatos.setSelectionBackground(new java.awt.Color(204, 204, 204));
         tblDatos.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         tblDatos.setShowGrid(true);
         tblDatos.getTableHeader().setReorderingAllowed(false);
@@ -90,41 +88,35 @@ public class LoanView extends javax.swing.JPanel {
 
         pnlVerPrestamo.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 57, 818, 338));
 
-        btnEditar.setBackground(new java.awt.Color(204, 204, 255));
+        btnEditar.setBackground(new java.awt.Color(143, 211, 255));
         btnEditar.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
+        btnEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/edit.png"))); // NOI18N
         btnEditar.setText("Editar");
         btnEditar.setBorder(null);
-        btnEditar.setPreferredSize(new java.awt.Dimension(90, 30));
+        btnEditar.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        btnEditar.setIconTextGap(5);
+        btnEditar.setPreferredSize(new java.awt.Dimension(100, 30));
         btnEditar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEditarActionPerformed(evt);
             }
         });
-        pnlVerPrestamo.add(btnEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(634, 410, -1, -1));
+        pnlVerPrestamo.add(btnEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(614, 410, -1, -1));
 
-        btnEntrega.setBackground(new java.awt.Color(204, 204, 255));
+        btnEntrega.setBackground(new java.awt.Color(143, 211, 255));
         btnEntrega.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
+        btnEntrega.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/return.png"))); // NOI18N
         btnEntrega.setText("Entrega");
         btnEntrega.setBorder(null);
-        btnEntrega.setPreferredSize(new java.awt.Dimension(90, 30));
+        btnEntrega.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        btnEntrega.setIconTextGap(5);
+        btnEntrega.setPreferredSize(new java.awt.Dimension(100, 30));
         btnEntrega.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEntregaActionPerformed(evt);
             }
         });
-        pnlVerPrestamo.add(btnEntrega, new org.netbeans.lib.awtextra.AbsoluteConstraints(734, 410, -1, -1));
-
-        txtBuscar.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
-        txtBuscar.setMinimumSize(new java.awt.Dimension(64, 30));
-        txtBuscar.setPreferredSize(new java.awt.Dimension(300, 30));
-        pnlVerPrestamo.add(txtBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(534, 12, 185, -1));
-
-        btnBuscar.setBackground(new java.awt.Color(204, 204, 255));
-        btnBuscar.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
-        btnBuscar.setText("Buscar");
-        btnBuscar.setBorder(null);
-        btnBuscar.setPreferredSize(new java.awt.Dimension(90, 30));
-        pnlVerPrestamo.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(734, 12, -1, -1));
+        pnlVerPrestamo.add(btnEntrega, new org.netbeans.lib.awtextra.AbsoluteConstraints(724, 410, -1, -1));
 
         lblTituloVerPrestamo.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
         lblTituloVerPrestamo.setText("Préstamos");
@@ -142,20 +134,24 @@ public class LoanView extends javax.swing.JPanel {
         pnlDatosPrestamo.add(lblTituloDatosPrestamo, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 10, -1, -1));
 
         txtIdentificacion.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
+        txtIdentificacion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(99, 192, 253)));
         txtIdentificacion.setPreferredSize(new java.awt.Dimension(285, 30));
         pnlDatosPrestamo.add(txtIdentificacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 110, -1, -1));
 
         txtPrestamo.setEditable(false);
         txtPrestamo.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
+        txtPrestamo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(99, 192, 253)));
         txtPrestamo.setPreferredSize(new java.awt.Dimension(285, 30));
         pnlDatosPrestamo.add(txtPrestamo, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 180, -1, -1));
 
         txtIsbn.setEditable(false);
         txtIsbn.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
+        txtIsbn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(99, 192, 253)));
         txtIsbn.setPreferredSize(new java.awt.Dimension(285, 30));
         pnlDatosPrestamo.add(txtIsbn, new org.netbeans.lib.awtextra.AbsoluteConstraints(455, 110, -1, -1));
 
         txtEntrega.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
+        txtEntrega.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(99, 192, 253)));
         txtEntrega.setPreferredSize(new java.awt.Dimension(285, 30));
         pnlDatosPrestamo.add(txtEntrega, new org.netbeans.lib.awtextra.AbsoluteConstraints(455, 180, -1, -1));
 
@@ -179,18 +175,24 @@ public class LoanView extends javax.swing.JPanel {
         lblEntregar.setPreferredSize(new java.awt.Dimension(285, 15));
         pnlDatosPrestamo.add(lblEntregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(455, 160, -1, -1));
 
-        btnInsertar.setBackground(new java.awt.Color(204, 204, 255));
+        btnInsertar.setBackground(new java.awt.Color(143, 211, 255));
         btnInsertar.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
+        btnInsertar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/save.png"))); // NOI18N
         btnInsertar.setBorder(null);
-        btnInsertar.setPreferredSize(new java.awt.Dimension(90, 30));
-        pnlDatosPrestamo.add(btnInsertar, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 345, -1, -1));
+        btnInsertar.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        btnInsertar.setIconTextGap(5);
+        btnInsertar.setPreferredSize(new java.awt.Dimension(100, 30));
+        pnlDatosPrestamo.add(btnInsertar, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 345, -1, -1));
 
-        btnVolver.setBackground(new java.awt.Color(204, 204, 255));
+        btnVolver.setBackground(new java.awt.Color(143, 211, 255));
         btnVolver.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
+        btnVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/back.png"))); // NOI18N
         btnVolver.setText("Volver");
         btnVolver.setBorder(null);
-        btnVolver.setPreferredSize(new java.awt.Dimension(90, 30));
-        pnlDatosPrestamo.add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 345, -1, -1));
+        btnVolver.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        btnVolver.setIconTextGap(5);
+        btnVolver.setPreferredSize(new java.awt.Dimension(100, 30));
+        pnlDatosPrestamo.add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 345, -1, -1));
 
         add(pnlDatosPrestamo, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 0, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
@@ -331,7 +333,6 @@ public class LoanView extends javax.swing.JPanel {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnEditar;
     private javax.swing.JButton btnEntrega;
     private javax.swing.JButton btnInsertar;
@@ -346,7 +347,6 @@ public class LoanView extends javax.swing.JPanel {
     private javax.swing.JPanel pnlDatosPrestamo;
     private javax.swing.JPanel pnlVerPrestamo;
     private javax.swing.JTable tblDatos;
-    private javax.swing.JTextField txtBuscar;
     private javax.swing.JTextField txtEntrega;
     private javax.swing.JTextField txtIdentificacion;
     private javax.swing.JTextField txtIsbn;

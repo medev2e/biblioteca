@@ -29,8 +29,6 @@ public class UserView extends javax.swing.JPanel {
         tblDatos = new javax.swing.JTable();
         btnEditar = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
-        txtBuscar = new javax.swing.JTextField();
-        btnBuscar = new javax.swing.JButton();
         lblTituloVerUsuario = new javax.swing.JLabel();
         btnNuevo = new javax.swing.JButton();
         btnPenalizar = new javax.swing.JButton();
@@ -85,7 +83,7 @@ public class UserView extends javax.swing.JPanel {
         tblDatos.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         tblDatos.setFillsViewportHeight(true);
         tblDatos.setGridColor(new java.awt.Color(153, 153, 153));
-        tblDatos.setSelectionBackground(new java.awt.Color(204, 102, 255));
+        tblDatos.setSelectionBackground(new java.awt.Color(204, 204, 204));
         tblDatos.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         tblDatos.setShowGrid(true);
         tblDatos.getTableHeader().setReorderingAllowed(false);
@@ -101,70 +99,70 @@ public class UserView extends javax.swing.JPanel {
 
         pnlVerUsuario.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 57, 818, 338));
 
-        btnEditar.setBackground(new java.awt.Color(204, 204, 255));
+        btnEditar.setBackground(new java.awt.Color(143, 211, 255));
         btnEditar.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
+        btnEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/edit.png"))); // NOI18N
         btnEditar.setText("Editar");
         btnEditar.setBorder(null);
-        btnEditar.setPreferredSize(new java.awt.Dimension(90, 30));
+        btnEditar.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        btnEditar.setIconTextGap(5);
+        btnEditar.setPreferredSize(new java.awt.Dimension(100, 30));
         btnEditar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEditarActionPerformed(evt);
             }
         });
-        pnlVerUsuario.add(btnEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(534, 410, -1, -1));
+        pnlVerUsuario.add(btnEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(504, 410, -1, -1));
 
-        btnEliminar.setBackground(new java.awt.Color(204, 204, 255));
+        btnEliminar.setBackground(new java.awt.Color(143, 211, 255));
         btnEliminar.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
+        btnEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/delete.png"))); // NOI18N
         btnEliminar.setText("Eliminar");
         btnEliminar.setBorder(null);
-        btnEliminar.setPreferredSize(new java.awt.Dimension(90, 30));
+        btnEliminar.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        btnEliminar.setIconTextGap(5);
+        btnEliminar.setPreferredSize(new java.awt.Dimension(100, 30));
         btnEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEliminarActionPerformed(evt);
             }
         });
-        pnlVerUsuario.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(634, 410, -1, -1));
-
-        txtBuscar.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
-        txtBuscar.setMinimumSize(new java.awt.Dimension(64, 30));
-        txtBuscar.setPreferredSize(new java.awt.Dimension(300, 30));
-        pnlVerUsuario.add(txtBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(534, 12, 185, -1));
-
-        btnBuscar.setBackground(new java.awt.Color(204, 204, 255));
-        btnBuscar.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
-        btnBuscar.setText("Buscar");
-        btnBuscar.setBorder(null);
-        btnBuscar.setPreferredSize(new java.awt.Dimension(90, 30));
-        pnlVerUsuario.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(734, 12, -1, -1));
+        pnlVerUsuario.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(614, 410, -1, -1));
 
         lblTituloVerUsuario.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
         lblTituloVerUsuario.setText("Usuarios");
         lblTituloVerUsuario.setPreferredSize(new java.awt.Dimension(80, 30));
         pnlVerUsuario.add(lblTituloVerUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 10, -1, -1));
 
-        btnNuevo.setBackground(new java.awt.Color(204, 204, 255));
+        btnNuevo.setBackground(new java.awt.Color(143, 211, 255));
         btnNuevo.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
+        btnNuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/add.png"))); // NOI18N
         btnNuevo.setText("Nuevo");
         btnNuevo.setBorder(null);
-        btnNuevo.setPreferredSize(new java.awt.Dimension(90, 30));
+        btnNuevo.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        btnNuevo.setIconTextGap(5);
+        btnNuevo.setPreferredSize(new java.awt.Dimension(100, 30));
         btnNuevo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnNuevoActionPerformed(evt);
             }
         });
-        pnlVerUsuario.add(btnNuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(434, 410, -1, -1));
+        pnlVerUsuario.add(btnNuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(394, 410, -1, -1));
 
-        btnPenalizar.setBackground(new java.awt.Color(204, 204, 255));
+        btnPenalizar.setBackground(new java.awt.Color(143, 211, 255));
         btnPenalizar.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
+        btnPenalizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/penalties.png"))); // NOI18N
         btnPenalizar.setText("Penalizar");
         btnPenalizar.setBorder(null);
-        btnPenalizar.setPreferredSize(new java.awt.Dimension(90, 30));
+        btnPenalizar.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        btnPenalizar.setIconTextGap(5);
+        btnPenalizar.setPreferredSize(new java.awt.Dimension(100, 30));
         btnPenalizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnPenalizarActionPerformed(evt);
             }
         });
-        pnlVerUsuario.add(btnPenalizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(734, 410, -1, -1));
+        pnlVerUsuario.add(btnPenalizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(724, 410, -1, -1));
 
         add(pnlVerUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
@@ -177,26 +175,32 @@ public class UserView extends javax.swing.JPanel {
         pnlDatosUsuario.add(lblTituloDatosUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 10, -1, -1));
 
         txtDireccion.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
+        txtDireccion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(99, 192, 253)));
         txtDireccion.setPreferredSize(new java.awt.Dimension(285, 30));
         pnlDatosUsuario.add(txtDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(455, 250, -1, -1));
 
         txtIdentificacion.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
+        txtIdentificacion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(99, 192, 253)));
         txtIdentificacion.setPreferredSize(new java.awt.Dimension(210, 30));
         pnlDatosUsuario.add(txtIdentificacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 110, -1, -1));
 
         txtNombres.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
+        txtNombres.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(99, 192, 253)));
         txtNombres.setPreferredSize(new java.awt.Dimension(285, 30));
         pnlDatosUsuario.add(txtNombres, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 180, -1, -1));
 
         txtApellidos.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
+        txtApellidos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(99, 192, 253)));
         txtApellidos.setPreferredSize(new java.awt.Dimension(285, 30));
         pnlDatosUsuario.add(txtApellidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 250, -1, -1));
 
         txtCorreo.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
+        txtCorreo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(99, 192, 253)));
         txtCorreo.setPreferredSize(new java.awt.Dimension(285, 30));
         pnlDatosUsuario.add(txtCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(455, 110, -1, -1));
 
         txtTelefono.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
+        txtTelefono.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(99, 192, 253)));
         txtTelefono.setPreferredSize(new java.awt.Dimension(285, 30));
         pnlDatosUsuario.add(txtTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(455, 180, -1, -1));
 
@@ -230,21 +234,28 @@ public class UserView extends javax.swing.JPanel {
         lblApellido.setPreferredSize(new java.awt.Dimension(285, 15));
         pnlDatosUsuario.add(lblApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 230, -1, -1));
 
-        btnInsertar.setBackground(new java.awt.Color(204, 204, 255));
+        btnInsertar.setBackground(new java.awt.Color(143, 211, 255));
         btnInsertar.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
+        btnInsertar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/save.png"))); // NOI18N
         btnInsertar.setBorder(null);
-        btnInsertar.setPreferredSize(new java.awt.Dimension(90, 30));
-        pnlDatosUsuario.add(btnInsertar, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 345, -1, -1));
+        btnInsertar.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        btnInsertar.setIconTextGap(5);
+        btnInsertar.setPreferredSize(new java.awt.Dimension(100, 30));
+        pnlDatosUsuario.add(btnInsertar, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 345, -1, -1));
 
-        btnVolver.setBackground(new java.awt.Color(204, 204, 255));
+        btnVolver.setBackground(new java.awt.Color(143, 211, 255));
         btnVolver.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
+        btnVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/back.png"))); // NOI18N
         btnVolver.setText("Volver");
         btnVolver.setBorder(null);
-        btnVolver.setPreferredSize(new java.awt.Dimension(90, 30));
-        pnlDatosUsuario.add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 345, -1, -1));
+        btnVolver.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        btnVolver.setIconTextGap(5);
+        btnVolver.setPreferredSize(new java.awt.Dimension(100, 30));
+        pnlDatosUsuario.add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 345, -1, -1));
 
         cboxTipoIdentificacion.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         cboxTipoIdentificacion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "C.C.", "T.I.", "C.E.", "P.P.", "NIT", "R.C." }));
+        cboxTipoIdentificacion.setBorder(null);
         cboxTipoIdentificacion.setPreferredSize(new java.awt.Dimension(95, 30));
         pnlDatosUsuario.add(cboxTipoIdentificacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(305, 110, 70, -1));
 
@@ -425,7 +436,6 @@ public class UserView extends javax.swing.JPanel {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnEditar;
     private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnInsertar;
@@ -446,7 +456,6 @@ public class UserView extends javax.swing.JPanel {
     private javax.swing.JPanel pnlVerUsuario;
     private javax.swing.JTable tblDatos;
     private javax.swing.JTextField txtApellidos;
-    private javax.swing.JTextField txtBuscar;
     private javax.swing.JTextField txtCorreo;
     private javax.swing.JTextField txtDireccion;
     private javax.swing.JTextField txtIdentificacion;
