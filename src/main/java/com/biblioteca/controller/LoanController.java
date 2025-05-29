@@ -84,6 +84,18 @@ public class LoanController {
 
             });
 
+            loanView.getBtnVolver().addActionListener(new ActionListener() {
+
+                @Override
+                public void actionPerformed(ActionEvent evt) {
+
+                    loanView.limpiarJTextFields();
+                    mostrarJPanel(loanView.getPnlVerPrestamo());
+
+                }
+
+            });
+
         } else {
 
             loanView.mostrarMensaje("Seleccione una fila para editar.", 2);
