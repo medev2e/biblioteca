@@ -1,2 +1,0 @@
-C.C.123132,paq,paq,1223223.00,false
-C.C.123132,sadads,asdasd,312321.00,false

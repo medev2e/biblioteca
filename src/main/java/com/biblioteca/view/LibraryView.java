@@ -116,13 +116,14 @@ public class LibraryView extends javax.swing.JFrame {
         jLabel1.setIconTextGap(0);
         pnlOpciones.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 20, -1, 100));
 
-        getContentPane().add(pnlOpciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        getContentPane().add(pnlOpciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 650));
 
         pnlContenido.setBackground(new java.awt.Color(255, 255, 255));
         pnlContenido.setLayout(new java.awt.BorderLayout());
-        getContentPane().add(pnlContenido, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 140, 830, 450));
+        getContentPane().add(pnlContenido, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 60, 930, 590));
 
         pnlBarra.setBackground(new java.awt.Color(191, 230, 255));
+        pnlBarra.setPreferredSize(new java.awt.Dimension(820, 60));
         pnlBarra.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnCerrarSesion.setBackground(new java.awt.Color(143, 211, 255));
@@ -139,9 +140,9 @@ public class LibraryView extends javax.swing.JFrame {
                 btnCerrarSesionActionPerformed(evt);
             }
         });
-        pnlBarra.add(btnCerrarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(696, 10, -1, -1));
+        pnlBarra.add(btnCerrarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(795, 15, -1, -1));
 
-        getContentPane().add(pnlBarra, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 0, 830, 140));
+        getContentPane().add(pnlBarra, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 0, 930, 60));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -179,7 +180,7 @@ public class LibraryView extends javax.swing.JFrame {
     }
 
     public static void mostrarJPanel(JPanel panel) {
-        panel.setSize(830, 450);
+        panel.setSize(930, 590);
         panel.setLocation(0, 0);
 
         pnlContenido.removeAll();

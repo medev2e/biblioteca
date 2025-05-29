@@ -97,7 +97,7 @@ public class UserView extends javax.swing.JPanel {
             tblDatos.getColumnModel().getColumn(5).setResizable(false);
         }
 
-        pnlVerUsuario.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 57, 818, 338));
+        pnlVerUsuario.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 910, 490));
 
         btnEditar.setBackground(new java.awt.Color(143, 211, 255));
         btnEditar.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
@@ -112,7 +112,7 @@ public class UserView extends javax.swing.JPanel {
                 btnEditarActionPerformed(evt);
             }
         });
-        pnlVerUsuario.add(btnEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(504, 410, -1, -1));
+        pnlVerUsuario.add(btnEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 550, -1, -1));
 
         btnEliminar.setBackground(new java.awt.Color(143, 211, 255));
         btnEliminar.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
@@ -127,7 +127,7 @@ public class UserView extends javax.swing.JPanel {
                 btnEliminarActionPerformed(evt);
             }
         });
-        pnlVerUsuario.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(614, 410, -1, -1));
+        pnlVerUsuario.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 550, -1, -1));
 
         lblTituloVerUsuario.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
         lblTituloVerUsuario.setText("Usuarios");
@@ -147,7 +147,7 @@ public class UserView extends javax.swing.JPanel {
                 btnNuevoActionPerformed(evt);
             }
         });
-        pnlVerUsuario.add(btnNuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(394, 410, -1, -1));
+        pnlVerUsuario.add(btnNuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 550, -1, -1));
 
         btnPenalizar.setBackground(new java.awt.Color(143, 211, 255));
         btnPenalizar.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
@@ -162,9 +162,9 @@ public class UserView extends javax.swing.JPanel {
                 btnPenalizarActionPerformed(evt);
             }
         });
-        pnlVerUsuario.add(btnPenalizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(724, 410, -1, -1));
+        pnlVerUsuario.add(btnPenalizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 550, -1, -1));
 
-        add(pnlVerUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        add(pnlVerUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 930, 590));
 
         pnlDatosUsuario.setBackground(new java.awt.Color(255, 255, 255));
         pnlDatosUsuario.setPreferredSize(new java.awt.Dimension(830, 450));
@@ -177,62 +177,62 @@ public class UserView extends javax.swing.JPanel {
         txtDireccion.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         txtDireccion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(99, 192, 253)));
         txtDireccion.setPreferredSize(new java.awt.Dimension(285, 30));
-        pnlDatosUsuario.add(txtDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(455, 250, -1, -1));
+        pnlDatosUsuario.add(txtDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 290, -1, -1));
 
         txtIdentificacion.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         txtIdentificacion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(99, 192, 253)));
         txtIdentificacion.setPreferredSize(new java.awt.Dimension(210, 30));
-        pnlDatosUsuario.add(txtIdentificacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 110, -1, -1));
+        pnlDatosUsuario.add(txtIdentificacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, -1, -1));
 
         txtNombres.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         txtNombres.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(99, 192, 253)));
         txtNombres.setPreferredSize(new java.awt.Dimension(285, 30));
-        pnlDatosUsuario.add(txtNombres, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 180, -1, -1));
+        pnlDatosUsuario.add(txtNombres, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 220, -1, -1));
 
         txtApellidos.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         txtApellidos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(99, 192, 253)));
         txtApellidos.setPreferredSize(new java.awt.Dimension(285, 30));
-        pnlDatosUsuario.add(txtApellidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 250, -1, -1));
+        pnlDatosUsuario.add(txtApellidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 290, -1, -1));
 
         txtCorreo.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         txtCorreo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(99, 192, 253)));
         txtCorreo.setPreferredSize(new java.awt.Dimension(285, 30));
-        pnlDatosUsuario.add(txtCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(455, 110, -1, -1));
+        pnlDatosUsuario.add(txtCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 150, -1, -1));
 
         txtTelefono.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         txtTelefono.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(99, 192, 253)));
         txtTelefono.setPreferredSize(new java.awt.Dimension(285, 30));
-        pnlDatosUsuario.add(txtTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(455, 180, -1, -1));
+        pnlDatosUsuario.add(txtTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 220, -1, -1));
 
         lblCorreo.setFont(new java.awt.Font("sansserif", 0, 12)); // NOI18N
         lblCorreo.setText("Correo electrónico");
         lblCorreo.setPreferredSize(new java.awt.Dimension(285, 15));
-        pnlDatosUsuario.add(lblCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(455, 90, -1, -1));
+        pnlDatosUsuario.add(lblCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 130, -1, -1));
 
         lblIdentificacion.setFont(new java.awt.Font("sansserif", 0, 12)); // NOI18N
         lblIdentificacion.setText("Documento de identificación");
         lblIdentificacion.setPreferredSize(new java.awt.Dimension(285, 15));
-        pnlDatosUsuario.add(lblIdentificacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, -1, -1));
+        pnlDatosUsuario.add(lblIdentificacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 130, -1, -1));
 
         lblNombres.setFont(new java.awt.Font("sansserif", 0, 12)); // NOI18N
         lblNombres.setText("Nombres");
         lblNombres.setPreferredSize(new java.awt.Dimension(285, 15));
-        pnlDatosUsuario.add(lblNombres, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 160, -1, -1));
+        pnlDatosUsuario.add(lblNombres, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 200, -1, -1));
 
         lblTelefono.setFont(new java.awt.Font("sansserif", 0, 12)); // NOI18N
         lblTelefono.setText("Número de teléfono");
         lblTelefono.setPreferredSize(new java.awt.Dimension(285, 15));
-        pnlDatosUsuario.add(lblTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(455, 160, -1, -1));
+        pnlDatosUsuario.add(lblTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 200, -1, -1));
 
         lblDireccion.setFont(new java.awt.Font("sansserif", 0, 12)); // NOI18N
         lblDireccion.setText("Dirección");
         lblDireccion.setPreferredSize(new java.awt.Dimension(285, 15));
-        pnlDatosUsuario.add(lblDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(455, 230, -1, -1));
+        pnlDatosUsuario.add(lblDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 270, -1, -1));
 
         lblApellido.setFont(new java.awt.Font("sansserif", 0, 12)); // NOI18N
         lblApellido.setText("Apellidos");
         lblApellido.setPreferredSize(new java.awt.Dimension(285, 15));
-        pnlDatosUsuario.add(lblApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 230, -1, -1));
+        pnlDatosUsuario.add(lblApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 270, -1, -1));
 
         btnInsertar.setBackground(new java.awt.Color(143, 211, 255));
         btnInsertar.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
@@ -241,7 +241,7 @@ public class UserView extends javax.swing.JPanel {
         btnInsertar.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         btnInsertar.setIconTextGap(5);
         btnInsertar.setPreferredSize(new java.awt.Dimension(100, 30));
-        pnlDatosUsuario.add(btnInsertar, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 345, -1, -1));
+        pnlDatosUsuario.add(btnInsertar, new org.netbeans.lib.awtextra.AbsoluteConstraints(585, 370, -1, -1));
 
         btnVolver.setBackground(new java.awt.Color(143, 211, 255));
         btnVolver.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
@@ -251,15 +251,15 @@ public class UserView extends javax.swing.JPanel {
         btnVolver.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         btnVolver.setIconTextGap(5);
         btnVolver.setPreferredSize(new java.awt.Dimension(100, 30));
-        pnlDatosUsuario.add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 345, -1, -1));
+        pnlDatosUsuario.add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(695, 370, -1, -1));
 
         cboxTipoIdentificacion.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         cboxTipoIdentificacion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "C.C.", "T.I.", "C.E.", "P.P.", "NIT", "R.C." }));
         cboxTipoIdentificacion.setBorder(null);
         cboxTipoIdentificacion.setPreferredSize(new java.awt.Dimension(95, 30));
-        pnlDatosUsuario.add(cboxTipoIdentificacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(305, 110, 70, -1));
+        pnlDatosUsuario.add(cboxTipoIdentificacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 150, 75, -1));
 
-        add(pnlDatosUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 0, -1, -1));
+        add(pnlDatosUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 0, 930, 590));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed

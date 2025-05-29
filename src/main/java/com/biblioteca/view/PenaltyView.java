@@ -46,10 +46,11 @@ public class PenaltyView extends javax.swing.JPanel {
         jScrollPane3 = new javax.swing.JScrollPane();
         txtNota = new javax.swing.JTextArea();
 
+        setPreferredSize(new java.awt.Dimension(1860, 590));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         pnlVerPenalizacion.setBackground(new java.awt.Color(255, 255, 255));
-        pnlVerPenalizacion.setPreferredSize(new java.awt.Dimension(830, 450));
+        pnlVerPenalizacion.setPreferredSize(new java.awt.Dimension(930, 450));
         pnlVerPenalizacion.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         tblDatos.setFont(new java.awt.Font("sansserif", 0, 12)); // NOI18N
@@ -91,7 +92,7 @@ public class PenaltyView extends javax.swing.JPanel {
             tblDatos.getColumnModel().getColumn(2).setResizable(false);
         }
 
-        pnlVerPenalizacion.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 57, 818, 338));
+        pnlVerPenalizacion.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 910, 490));
 
         btnEditar.setBackground(new java.awt.Color(143, 211, 255));
         btnEditar.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
@@ -106,7 +107,7 @@ public class PenaltyView extends javax.swing.JPanel {
                 btnEditarActionPerformed(evt);
             }
         });
-        pnlVerPenalizacion.add(btnEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(504, 410, -1, -1));
+        pnlVerPenalizacion.add(btnEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 550, -1, -1));
 
         btnEliminar.setBackground(new java.awt.Color(143, 211, 255));
         btnEliminar.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
@@ -121,7 +122,7 @@ public class PenaltyView extends javax.swing.JPanel {
                 btnEliminarActionPerformed(evt);
             }
         });
-        pnlVerPenalizacion.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(614, 410, -1, -1));
+        pnlVerPenalizacion.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 550, -1, -1));
 
         btnPagar.setBackground(new java.awt.Color(143, 211, 255));
         btnPagar.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
@@ -137,7 +138,7 @@ public class PenaltyView extends javax.swing.JPanel {
                 btnPagarActionPerformed(evt);
             }
         });
-        pnlVerPenalizacion.add(btnPagar, new org.netbeans.lib.awtextra.AbsoluteConstraints(724, 410, -1, -1));
+        pnlVerPenalizacion.add(btnPagar, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 550, -1, -1));
 
         lblTituloVerPenalizacion.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
         lblTituloVerPenalizacion.setText("Penalizaciones");
@@ -158,9 +159,9 @@ public class PenaltyView extends javax.swing.JPanel {
                 btnInfoActionPerformed(evt);
             }
         });
-        pnlVerPenalizacion.add(btnInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(394, 410, -1, -1));
+        pnlVerPenalizacion.add(btnInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 550, -1, -1));
 
-        add(pnlVerPenalizacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        add(pnlVerPenalizacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 930, 590));
 
         pnlDatosPenalizacion.setBackground(new java.awt.Color(255, 255, 255));
         pnlDatosPenalizacion.setPreferredSize(new java.awt.Dimension(830, 450));
@@ -174,32 +175,32 @@ public class PenaltyView extends javax.swing.JPanel {
         txtIdentificacion.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         txtIdentificacion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(99, 192, 253)));
         txtIdentificacion.setPreferredSize(new java.awt.Dimension(285, 30));
-        pnlDatosPenalizacion.add(txtIdentificacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 110, -1, -1));
+        pnlDatosPenalizacion.add(txtIdentificacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 110, -1, -1));
 
         txtAmonestacion.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         txtAmonestacion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(99, 192, 253)));
         txtAmonestacion.setPreferredSize(new java.awt.Dimension(285, 30));
-        pnlDatosPenalizacion.add(txtAmonestacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(455, 110, -1, -1));
+        pnlDatosPenalizacion.add(txtAmonestacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 110, -1, -1));
 
         lblAmonestacion.setFont(new java.awt.Font("sansserif", 0, 12)); // NOI18N
         lblAmonestacion.setText("Amonestación económica");
         lblAmonestacion.setPreferredSize(new java.awt.Dimension(285, 15));
-        pnlDatosPenalizacion.add(lblAmonestacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(455, 90, -1, -1));
+        pnlDatosPenalizacion.add(lblAmonestacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 90, -1, -1));
 
         lblIdentificacion.setFont(new java.awt.Font("sansserif", 0, 12)); // NOI18N
         lblIdentificacion.setText("Documento de identificación");
         lblIdentificacion.setPreferredSize(new java.awt.Dimension(285, 15));
-        pnlDatosPenalizacion.add(lblIdentificacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, -1, -1));
+        pnlDatosPenalizacion.add(lblIdentificacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 90, -1, -1));
 
         lblRazon.setFont(new java.awt.Font("sansserif", 0, 12)); // NOI18N
         lblRazon.setText("Razón de la amonestación");
         lblRazon.setPreferredSize(new java.awt.Dimension(285, 15));
-        pnlDatosPenalizacion.add(lblRazon, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 160, -1, -1));
+        pnlDatosPenalizacion.add(lblRazon, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 160, -1, -1));
 
         lblNota.setFont(new java.awt.Font("sansserif", 0, 12)); // NOI18N
         lblNota.setText("Nota adiccional");
         lblNota.setPreferredSize(new java.awt.Dimension(285, 15));
-        pnlDatosPenalizacion.add(lblNota, new org.netbeans.lib.awtextra.AbsoluteConstraints(455, 160, -1, -1));
+        pnlDatosPenalizacion.add(lblNota, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 160, -1, -1));
 
         btnInsertar.setBackground(new java.awt.Color(143, 211, 255));
         btnInsertar.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
@@ -208,7 +209,7 @@ public class PenaltyView extends javax.swing.JPanel {
         btnInsertar.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         btnInsertar.setIconTextGap(5);
         btnInsertar.setPreferredSize(new java.awt.Dimension(100, 30));
-        pnlDatosPenalizacion.add(btnInsertar, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 345, -1, -1));
+        pnlDatosPenalizacion.add(btnInsertar, new org.netbeans.lib.awtextra.AbsoluteConstraints(585, 370, -1, -1));
 
         btnVolver.setBackground(new java.awt.Color(143, 211, 255));
         btnVolver.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
@@ -218,7 +219,7 @@ public class PenaltyView extends javax.swing.JPanel {
         btnVolver.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         btnVolver.setIconTextGap(5);
         btnVolver.setPreferredSize(new java.awt.Dimension(100, 30));
-        pnlDatosPenalizacion.add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 345, -1, -1));
+        pnlDatosPenalizacion.add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(695, 370, -1, -1));
 
         txtRazon.setColumns(20);
         txtRazon.setLineWrap(true);
@@ -227,7 +228,7 @@ public class PenaltyView extends javax.swing.JPanel {
         txtRazon.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(99, 192, 253)));
         jScrollPane1.setViewportView(txtRazon);
 
-        pnlDatosPenalizacion.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 180, 280, 130));
+        pnlDatosPenalizacion.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 180, 285, 130));
 
         txtNota.setColumns(20);
         txtNota.setLineWrap(true);
@@ -236,9 +237,9 @@ public class PenaltyView extends javax.swing.JPanel {
         txtNota.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(99, 192, 253)));
         jScrollPane3.setViewportView(txtNota);
 
-        pnlDatosPenalizacion.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(455, 180, 285, 130));
+        pnlDatosPenalizacion.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 180, 285, 130));
 
-        add(pnlDatosPenalizacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 0, -1, -1));
+        add(pnlDatosPenalizacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 0, 930, 590));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed

@@ -42,10 +42,11 @@ public class LoanView extends javax.swing.JPanel {
         btnInsertar = new javax.swing.JButton();
         btnVolver = new javax.swing.JButton();
 
+        setPreferredSize(new java.awt.Dimension(1860, 450));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         pnlVerPrestamo.setBackground(new java.awt.Color(255, 255, 255));
-        pnlVerPrestamo.setPreferredSize(new java.awt.Dimension(830, 450));
+        pnlVerPrestamo.setPreferredSize(new java.awt.Dimension(930, 590));
         pnlVerPrestamo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         tblDatos.setFont(new java.awt.Font("sansserif", 0, 12)); // NOI18N
@@ -86,7 +87,7 @@ public class LoanView extends javax.swing.JPanel {
             tblDatos.getColumnModel().getColumn(3).setResizable(false);
         }
 
-        pnlVerPrestamo.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 57, 818, 338));
+        pnlVerPrestamo.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 910, 490));
 
         btnEditar.setBackground(new java.awt.Color(143, 211, 255));
         btnEditar.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
@@ -101,7 +102,7 @@ public class LoanView extends javax.swing.JPanel {
                 btnEditarActionPerformed(evt);
             }
         });
-        pnlVerPrestamo.add(btnEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(614, 410, -1, -1));
+        pnlVerPrestamo.add(btnEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 550, -1, -1));
 
         btnEntrega.setBackground(new java.awt.Color(143, 211, 255));
         btnEntrega.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
@@ -116,14 +117,14 @@ public class LoanView extends javax.swing.JPanel {
                 btnEntregaActionPerformed(evt);
             }
         });
-        pnlVerPrestamo.add(btnEntrega, new org.netbeans.lib.awtextra.AbsoluteConstraints(724, 410, -1, -1));
+        pnlVerPrestamo.add(btnEntrega, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 550, -1, -1));
 
         lblTituloVerPrestamo.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
         lblTituloVerPrestamo.setText("Préstamos");
         lblTituloVerPrestamo.setPreferredSize(new java.awt.Dimension(200, 30));
         pnlVerPrestamo.add(lblTituloVerPrestamo, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 10, -1, -1));
 
-        add(pnlVerPrestamo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        add(pnlVerPrestamo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 930, 590));
 
         pnlDatosPrestamo.setBackground(new java.awt.Color(255, 255, 255));
         pnlDatosPrestamo.setPreferredSize(new java.awt.Dimension(830, 450));
@@ -136,44 +137,44 @@ public class LoanView extends javax.swing.JPanel {
         txtIdentificacion.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         txtIdentificacion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(99, 192, 253)));
         txtIdentificacion.setPreferredSize(new java.awt.Dimension(285, 30));
-        pnlDatosPrestamo.add(txtIdentificacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 110, -1, -1));
+        pnlDatosPrestamo.add(txtIdentificacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, -1, -1));
 
         txtPrestamo.setEditable(false);
         txtPrestamo.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         txtPrestamo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(99, 192, 253)));
         txtPrestamo.setPreferredSize(new java.awt.Dimension(285, 30));
-        pnlDatosPrestamo.add(txtPrestamo, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 180, -1, -1));
+        pnlDatosPrestamo.add(txtPrestamo, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 220, -1, -1));
 
         txtIsbn.setEditable(false);
         txtIsbn.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         txtIsbn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(99, 192, 253)));
         txtIsbn.setPreferredSize(new java.awt.Dimension(285, 30));
-        pnlDatosPrestamo.add(txtIsbn, new org.netbeans.lib.awtextra.AbsoluteConstraints(455, 110, -1, -1));
+        pnlDatosPrestamo.add(txtIsbn, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 150, -1, -1));
 
         txtEntrega.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         txtEntrega.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(99, 192, 253)));
         txtEntrega.setPreferredSize(new java.awt.Dimension(285, 30));
-        pnlDatosPrestamo.add(txtEntrega, new org.netbeans.lib.awtextra.AbsoluteConstraints(455, 180, -1, -1));
+        pnlDatosPrestamo.add(txtEntrega, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 220, -1, -1));
 
         lblIsbn.setFont(new java.awt.Font("sansserif", 0, 12)); // NOI18N
         lblIsbn.setText("ISBN del libro");
         lblIsbn.setPreferredSize(new java.awt.Dimension(285, 15));
-        pnlDatosPrestamo.add(lblIsbn, new org.netbeans.lib.awtextra.AbsoluteConstraints(455, 90, -1, -1));
+        pnlDatosPrestamo.add(lblIsbn, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 130, -1, -1));
 
         lblIdentificacion.setFont(new java.awt.Font("sansserif", 0, 12)); // NOI18N
         lblIdentificacion.setText("Documento del usuario");
         lblIdentificacion.setPreferredSize(new java.awt.Dimension(285, 15));
-        pnlDatosPrestamo.add(lblIdentificacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, -1, -1));
+        pnlDatosPrestamo.add(lblIdentificacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 130, -1, -1));
 
         lblPrestamo.setFont(new java.awt.Font("sansserif", 0, 12)); // NOI18N
         lblPrestamo.setText("Fecha de préstamo");
         lblPrestamo.setPreferredSize(new java.awt.Dimension(285, 15));
-        pnlDatosPrestamo.add(lblPrestamo, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 160, -1, -1));
+        pnlDatosPrestamo.add(lblPrestamo, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 200, -1, -1));
 
         lblEntregar.setFont(new java.awt.Font("sansserif", 0, 12)); // NOI18N
         lblEntregar.setText("Fecha de entrega");
         lblEntregar.setPreferredSize(new java.awt.Dimension(285, 15));
-        pnlDatosPrestamo.add(lblEntregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(455, 160, -1, -1));
+        pnlDatosPrestamo.add(lblEntregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 200, -1, -1));
 
         btnInsertar.setBackground(new java.awt.Color(143, 211, 255));
         btnInsertar.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
@@ -182,7 +183,7 @@ public class LoanView extends javax.swing.JPanel {
         btnInsertar.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         btnInsertar.setIconTextGap(5);
         btnInsertar.setPreferredSize(new java.awt.Dimension(100, 30));
-        pnlDatosPrestamo.add(btnInsertar, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 345, -1, -1));
+        pnlDatosPrestamo.add(btnInsertar, new org.netbeans.lib.awtextra.AbsoluteConstraints(585, 370, -1, -1));
 
         btnVolver.setBackground(new java.awt.Color(143, 211, 255));
         btnVolver.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
@@ -192,9 +193,9 @@ public class LoanView extends javax.swing.JPanel {
         btnVolver.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         btnVolver.setIconTextGap(5);
         btnVolver.setPreferredSize(new java.awt.Dimension(100, 30));
-        pnlDatosPrestamo.add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 345, -1, -1));
+        pnlDatosPrestamo.add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(695, 370, -1, -1));
 
-        add(pnlDatosPrestamo, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 0, -1, -1));
+        add(pnlDatosPrestamo, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 0, 930, 590));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed

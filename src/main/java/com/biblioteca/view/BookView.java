@@ -95,7 +95,7 @@ public class BookView extends javax.swing.JPanel {
             tblDatos.getColumnModel().getColumn(6).setResizable(false);
         }
 
-        pnlVerLibro.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 57, 818, 338));
+        pnlVerLibro.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 910, 490));
 
         btnNuevo.setBackground(new java.awt.Color(143, 211, 255));
         btnNuevo.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
@@ -110,7 +110,7 @@ public class BookView extends javax.swing.JPanel {
                 btnNuevoActionPerformed(evt);
             }
         });
-        pnlVerLibro.add(btnNuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(394, 410, -1, -1));
+        pnlVerLibro.add(btnNuevo, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 550, -1, -1));
 
         btnEditar.setBackground(new java.awt.Color(143, 211, 255));
         btnEditar.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
@@ -125,7 +125,7 @@ public class BookView extends javax.swing.JPanel {
                 btnEditarActionPerformed(evt);
             }
         });
-        pnlVerLibro.add(btnEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(504, 410, -1, -1));
+        pnlVerLibro.add(btnEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 550, -1, -1));
 
         btnEliminar.setBackground(new java.awt.Color(143, 211, 255));
         btnEliminar.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
@@ -140,7 +140,7 @@ public class BookView extends javax.swing.JPanel {
                 btnEliminarActionPerformed(evt);
             }
         });
-        pnlVerLibro.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(614, 410, -1, -1));
+        pnlVerLibro.add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 550, -1, -1));
 
         btnPrestar.setBackground(new java.awt.Color(143, 211, 255));
         btnPrestar.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
@@ -155,18 +155,18 @@ public class BookView extends javax.swing.JPanel {
                 btnPrestarActionPerformed(evt);
             }
         });
-        pnlVerLibro.add(btnPrestar, new org.netbeans.lib.awtextra.AbsoluteConstraints(724, 410, -1, -1));
+        pnlVerLibro.add(btnPrestar, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 550, -1, -1));
 
         lblTituloVerLibro.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
         lblTituloVerLibro.setText("Libros");
         lblTituloVerLibro.setPreferredSize(new java.awt.Dimension(200, 30));
         pnlVerLibro.add(lblTituloVerLibro, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 10, -1, -1));
 
-        add(pnlVerLibro, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        add(pnlVerLibro, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 930, 590));
 
         pnlDatosLibro.setBackground(new java.awt.Color(255, 255, 255));
-        pnlDatosLibro.setMinimumSize(new java.awt.Dimension(830, 450));
-        pnlDatosLibro.setPreferredSize(new java.awt.Dimension(830, 450));
+        pnlDatosLibro.setMinimumSize(new java.awt.Dimension(930, 450));
+        pnlDatosLibro.setPreferredSize(new java.awt.Dimension(930, 450));
         pnlDatosLibro.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblTituloDatosLibro.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
@@ -176,62 +176,62 @@ public class BookView extends javax.swing.JPanel {
         txtEdicion.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         txtEdicion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(99, 192, 253)));
         txtEdicion.setPreferredSize(new java.awt.Dimension(285, 30));
-        pnlDatosLibro.add(txtEdicion, new org.netbeans.lib.awtextra.AbsoluteConstraints(455, 250, -1, -1));
+        pnlDatosLibro.add(txtEdicion, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 290, -1, -1));
 
         txtIsbn.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         txtIsbn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(99, 192, 253)));
         txtIsbn.setPreferredSize(new java.awt.Dimension(285, 30));
-        pnlDatosLibro.add(txtIsbn, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 110, -1, -1));
+        pnlDatosLibro.add(txtIsbn, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, -1, -1));
 
         txtTitulo.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         txtTitulo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(99, 192, 253)));
         txtTitulo.setPreferredSize(new java.awt.Dimension(285, 30));
-        pnlDatosLibro.add(txtTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 180, -1, -1));
+        pnlDatosLibro.add(txtTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 220, -1, -1));
 
         txtAutor.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         txtAutor.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(99, 192, 253)));
         txtAutor.setPreferredSize(new java.awt.Dimension(285, 30));
-        pnlDatosLibro.add(txtAutor, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 250, -1, -1));
+        pnlDatosLibro.add(txtAutor, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 290, -1, -1));
 
         txtEditorial.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         txtEditorial.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(99, 192, 253)));
         txtEditorial.setPreferredSize(new java.awt.Dimension(285, 30));
-        pnlDatosLibro.add(txtEditorial, new org.netbeans.lib.awtextra.AbsoluteConstraints(455, 110, -1, -1));
+        pnlDatosLibro.add(txtEditorial, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 150, -1, -1));
 
         txtGenero.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         txtGenero.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(99, 192, 253)));
         txtGenero.setPreferredSize(new java.awt.Dimension(285, 30));
-        pnlDatosLibro.add(txtGenero, new org.netbeans.lib.awtextra.AbsoluteConstraints(455, 180, -1, -1));
+        pnlDatosLibro.add(txtGenero, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 220, -1, -1));
 
         lblEditorial.setFont(new java.awt.Font("sansserif", 0, 12)); // NOI18N
         lblEditorial.setText("Editorial");
         lblEditorial.setPreferredSize(new java.awt.Dimension(285, 15));
-        pnlDatosLibro.add(lblEditorial, new org.netbeans.lib.awtextra.AbsoluteConstraints(455, 90, -1, -1));
+        pnlDatosLibro.add(lblEditorial, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 130, -1, -1));
 
         lblIsbn.setFont(new java.awt.Font("sansserif", 0, 12)); // NOI18N
         lblIsbn.setText("Número ISBN");
         lblIsbn.setPreferredSize(new java.awt.Dimension(285, 15));
-        pnlDatosLibro.add(lblIsbn, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, -1, -1));
+        pnlDatosLibro.add(lblIsbn, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 130, -1, -1));
 
         lblTitulo.setFont(new java.awt.Font("sansserif", 0, 12)); // NOI18N
         lblTitulo.setText("Título del libro");
         lblTitulo.setPreferredSize(new java.awt.Dimension(285, 15));
-        pnlDatosLibro.add(lblTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 160, -1, -1));
+        pnlDatosLibro.add(lblTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 200, -1, -1));
 
         lblGenero.setFont(new java.awt.Font("sansserif", 0, 12)); // NOI18N
         lblGenero.setText("Género literario");
         lblGenero.setPreferredSize(new java.awt.Dimension(285, 15));
-        pnlDatosLibro.add(lblGenero, new org.netbeans.lib.awtextra.AbsoluteConstraints(455, 160, -1, -1));
+        pnlDatosLibro.add(lblGenero, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 200, -1, -1));
 
         lblEdicion.setFont(new java.awt.Font("sansserif", 0, 12)); // NOI18N
         lblEdicion.setText("Edición del libro");
         lblEdicion.setPreferredSize(new java.awt.Dimension(285, 15));
-        pnlDatosLibro.add(lblEdicion, new org.netbeans.lib.awtextra.AbsoluteConstraints(455, 230, -1, -1));
+        pnlDatosLibro.add(lblEdicion, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 270, -1, -1));
 
         lblAutor.setFont(new java.awt.Font("sansserif", 0, 12)); // NOI18N
         lblAutor.setText("Nombre del autor");
         lblAutor.setPreferredSize(new java.awt.Dimension(285, 15));
-        pnlDatosLibro.add(lblAutor, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 230, -1, -1));
+        pnlDatosLibro.add(lblAutor, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 270, -1, -1));
 
         btnInsertar.setBackground(new java.awt.Color(143, 211, 255));
         btnInsertar.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
@@ -240,7 +240,7 @@ public class BookView extends javax.swing.JPanel {
         btnInsertar.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         btnInsertar.setIconTextGap(5);
         btnInsertar.setPreferredSize(new java.awt.Dimension(100, 30));
-        pnlDatosLibro.add(btnInsertar, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 345, -1, -1));
+        pnlDatosLibro.add(btnInsertar, new org.netbeans.lib.awtextra.AbsoluteConstraints(585, 370, -1, -1));
 
         btnVolver.setBackground(new java.awt.Color(143, 211, 255));
         btnVolver.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
@@ -250,9 +250,9 @@ public class BookView extends javax.swing.JPanel {
         btnVolver.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         btnVolver.setIconTextGap(5);
         btnVolver.setPreferredSize(new java.awt.Dimension(100, 30));
-        pnlDatosLibro.add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 345, -1, -1));
+        pnlDatosLibro.add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(695, 370, -1, -1));
 
-        add(pnlDatosLibro, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 0, -1, -1));
+        add(pnlDatosLibro, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 0, 930, 590));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoActionPerformed
