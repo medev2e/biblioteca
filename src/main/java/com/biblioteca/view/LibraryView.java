@@ -9,7 +9,6 @@ public class LibraryView extends javax.swing.JFrame {
         
         initComponents();
         setLocationRelativeTo(null);
-        mostrarJPanel(new WelcomeView());
         
     }
 
@@ -18,7 +17,6 @@ public class LibraryView extends javax.swing.JFrame {
     private void initComponents() {
 
         pnlOpciones = new javax.swing.JPanel();
-        btnInicio = new javax.swing.JButton();
         btnUsuarios = new javax.swing.JButton();
         btnLibros = new javax.swing.JButton();
         btnPrestamos = new javax.swing.JButton();
@@ -37,25 +35,6 @@ public class LibraryView extends javax.swing.JFrame {
         pnlOpciones.setPreferredSize(new java.awt.Dimension(220, 590));
         pnlOpciones.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnInicio.setBackground(new java.awt.Color(197, 200, 255));
-        btnInicio.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
-        btnInicio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/home.png"))); // NOI18N
-        btnInicio.setText("Inicio");
-        btnInicio.setBorder(null);
-        btnInicio.setBorderPainted(false);
-        btnInicio.setContentAreaFilled(false);
-        btnInicio.setFocusPainted(false);
-        btnInicio.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        btnInicio.setIconTextGap(5);
-        btnInicio.setOpaque(true);
-        btnInicio.setPreferredSize(new java.awt.Dimension(180, 50));
-        btnInicio.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnInicioActionPerformed(evt);
-            }
-        });
-        pnlOpciones.add(btnInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 220, -1));
-
         btnUsuarios.setBackground(new java.awt.Color(197, 200, 255));
         btnUsuarios.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
         btnUsuarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/users.png"))); // NOI18N
@@ -73,7 +52,7 @@ public class LibraryView extends javax.swing.JFrame {
                 btnUsuariosActionPerformed(evt);
             }
         });
-        pnlOpciones.add(btnUsuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, 220, -1));
+        pnlOpciones.add(btnUsuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, 220, -1));
 
         btnLibros.setBackground(new java.awt.Color(197, 200, 255));
         btnLibros.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
@@ -92,7 +71,7 @@ public class LibraryView extends javax.swing.JFrame {
                 btnLibrosActionPerformed(evt);
             }
         });
-        pnlOpciones.add(btnLibros, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 220, -1));
+        pnlOpciones.add(btnLibros, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 250, 220, -1));
 
         btnPrestamos.setBackground(new java.awt.Color(197, 200, 255));
         btnPrestamos.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
@@ -111,7 +90,7 @@ public class LibraryView extends javax.swing.JFrame {
                 btnPrestamosActionPerformed(evt);
             }
         });
-        pnlOpciones.add(btnPrestamos, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 330, 220, -1));
+        pnlOpciones.add(btnPrestamos, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 300, 220, -1));
 
         btnPenalizaciones.setBackground(new java.awt.Color(197, 200, 255));
         btnPenalizaciones.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
@@ -130,7 +109,7 @@ public class LibraryView extends javax.swing.JFrame {
                 btnPenalizacionesActionPerformed(evt);
             }
         });
-        pnlOpciones.add(btnPenalizaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 380, 220, -1));
+        pnlOpciones.add(btnPenalizaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 350, 220, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo.png"))); // NOI18N
         jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -199,12 +178,6 @@ public class LibraryView extends javax.swing.JFrame {
         
     }
 
-    private void btnInicioActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnInicioActionPerformed
-
-        mostrarJPanel(new WelcomeView());
-        
-    }
-
     public static void mostrarJPanel(JPanel panel) {
         panel.setSize(830, 450);
         panel.setLocation(0, 0);
@@ -246,7 +219,6 @@ public class LibraryView extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCerrarSesion;
-    private javax.swing.JButton btnInicio;
     private javax.swing.JButton btnLibros;
     private javax.swing.JButton btnPenalizaciones;
     private javax.swing.JButton btnPrestamos;

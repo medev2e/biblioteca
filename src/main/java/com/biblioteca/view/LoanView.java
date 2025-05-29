@@ -120,7 +120,7 @@ public class LoanView extends javax.swing.JPanel {
 
         lblTituloVerPrestamo.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
         lblTituloVerPrestamo.setText("Préstamos");
-        lblTituloVerPrestamo.setPreferredSize(new java.awt.Dimension(100, 30));
+        lblTituloVerPrestamo.setPreferredSize(new java.awt.Dimension(200, 30));
         pnlVerPrestamo.add(lblTituloVerPrestamo, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 10, -1, -1));
 
         add(pnlVerPrestamo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));

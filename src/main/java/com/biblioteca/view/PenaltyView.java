@@ -140,7 +140,7 @@ public class PenaltyView extends javax.swing.JPanel {
 
         lblTituloVerPenalizacion.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
         lblTituloVerPenalizacion.setText("Penalizaciones");
-        lblTituloVerPenalizacion.setPreferredSize(new java.awt.Dimension(140, 30));
+        lblTituloVerPenalizacion.setPreferredSize(new java.awt.Dimension(200, 30));
         pnlVerPenalizacion.add(lblTituloVerPenalizacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 10, -1, -1));
 
         btnInfo.setBackground(new java.awt.Color(143, 211, 255));

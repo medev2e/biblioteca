@@ -159,7 +159,7 @@ public class BookView extends javax.swing.JPanel {
 
         lblTituloVerLibro.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
         lblTituloVerLibro.setText("Libros");
-        lblTituloVerLibro.setPreferredSize(new java.awt.Dimension(55, 30));
+        lblTituloVerLibro.setPreferredSize(new java.awt.Dimension(200, 30));
         pnlVerLibro.add(lblTituloVerLibro, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 10, -1, -1));
 
         add(pnlVerLibro, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));

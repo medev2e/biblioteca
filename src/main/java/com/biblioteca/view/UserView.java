@@ -131,7 +131,7 @@ public class UserView extends javax.swing.JPanel {
 
         lblTituloVerUsuario.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
         lblTituloVerUsuario.setText("Usuarios");
-        lblTituloVerUsuario.setPreferredSize(new java.awt.Dimension(80, 30));
+        lblTituloVerUsuario.setPreferredSize(new java.awt.Dimension(200, 30));
         pnlVerUsuario.add(lblTituloVerUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 10, -1, -1));
 
         btnNuevo.setBackground(new java.awt.Color(143, 211, 255));
